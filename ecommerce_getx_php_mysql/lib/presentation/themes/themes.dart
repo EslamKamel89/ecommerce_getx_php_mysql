@@ -1,0 +1,76 @@
+import 'package:ecommerce_getx_php_mysql/presentation/components/color.dart';
+import 'package:flutter/material.dart';
+
+enum DeviceLocale { en, ar }
+
+enum ThemeType { dark, light }
+
+class Themes {
+  static TextTheme _textThemeLocale(String fontFamily) {
+    return TextTheme(
+      headlineLarge: TextStyle(fontFamily: fontFamily, fontWeight: FontWeight.bold, fontSize: 22, color: AppColors.textDark),
+      headlineMedium: TextStyle(fontFamily: fontFamily, fontWeight: FontWeight.bold, fontSize: 17, color: AppColors.textDark),
+      headlineSmall: TextStyle(fontFamily: fontFamily, fontWeight: FontWeight.bold, fontSize: 12, color: AppColors.textDark),
+      bodyLarge: TextStyle(fontFamily: fontFamily, fontSize: 20, height: 1.5, color: AppColors.textLight),
+      bodyMedium: TextStyle(fontFamily: fontFamily, fontSize: 15, height: 1.5, color: AppColors.textLight),
+      bodySmall: TextStyle(fontFamily: fontFamily, fontSize: 10, height: 1.5, color: AppColors.textLight),
+      displayLarge: TextStyle(fontFamily: fontFamily, fontSize: 20, color: AppColors.textDark),
+      displayMedium: TextStyle(fontFamily: fontFamily, fontSize: 15, color: AppColors.textDark),
+      displaySmall: TextStyle(fontFamily: fontFamily, fontSize: 10, color: AppColors.textDark),
+    );
+  }
+
+  static ThemeData? customTheme({
+    required DeviceLocale deviceLocale,
+    required ThemeType themeType,
+  }) {
+    late String fontFamily;
+    if (deviceLocale == DeviceLocale.ar) {
+      fontFamily = 'CairoPlay';
+    } else if (deviceLocale == DeviceLocale.en) {
+      fontFamily = 'PlayfairDisplay';
+    }
+    if (themeType == ThemeType.light) {
+      return ThemeData.light().copyWith(
+        appBarTheme: const AppBarTheme(
+          backgroundColor: AppColors.backgroundColor1,
+          foregroundColor: AppColors.onBackgroundColor1,
+        ),
+        textTheme: _textThemeLocale(fontFamily),
+      );
+    } else if (themeType == ThemeType.dark) {
+      return ThemeData.dark().copyWith(
+        appBarTheme: const AppBarTheme(),
+        textTheme: _textThemeLocale(fontFamily),
+      );
+    }
+    return null;
+  }
+}
+
+
+ // static const TextTheme _textThemeEnglish = TextTheme(
+//     headlineLarge: TextStyle(fontFamily: 'PlayfairDisplay', fontWeight: FontWeight.bold, fontSize: 22, color: AppColors.textDark),
+//     headlineMedium: TextStyle(fontFamily: 'PlayfairDisplay', fontWeight: FontWeight.bold, fontSize: 17, color: AppColors.textDark),
+//     headlineSmall: TextStyle(fontFamily: 'PlayfairDisplay', fontWeight: FontWeight.bold, fontSize: 12, color: AppColors.textDark),
+//     bodyLarge: TextStyle(fontFamily: 'PlayfairDisplay', fontSize: 20, height: 1.5, color: AppColors.textLight),
+//     bodyMedium: TextStyle(fontFamily: 'PlayfairDisplay', fontSize: 15, height: 1.5, color: AppColors.textLight),
+//     bodySmall: TextStyle(fontFamily: 'PlayfairDisplay', fontSize: 10, height: 1.5, color: AppColors.textLight),
+//     displayLarge: TextStyle(fontFamily: 'PlayfairDisplay', fontSize: 20, color: AppColors.textDark),
+//     displayMedium: TextStyle(fontFamily: 'PlayfairDisplay', fontSize: 15, color: AppColors.textDark),
+//     displaySmall: TextStyle(fontFamily: 'PlayfairDisplay', fontSize: 10, color: AppColors.textDark),
+//   );
+
+//   static ThemeData customLightTheme = ThemeData.light().copyWith(
+//       appBarTheme: const AppBarTheme(
+//         backgroundColor: AppColors.backgroundColor1,
+//         foregroundColor: AppColors.onBackgroundColor1,
+//       ),
+//       textTheme: _textThemeEnglish);
+//   static ThemeData customDarkTheme = ThemeData.dark().copyWith(
+//     appBarTheme: const AppBarTheme(
+// //backgroundColor: Colors.black,
+// //foregroundColor: Colors.white,
+//         ),
+//     textTheme: _textThemeEnglish,
+//   );
