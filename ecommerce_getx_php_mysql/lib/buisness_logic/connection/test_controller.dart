@@ -12,13 +12,9 @@ class TestController extends GetxController {
   Future getData() async {
     statusRequest = StatusRequest.loading;
     var response = await testData.getData();
-    statusRequest = handlingData(response);
+    statusRequest = handlingStatusRequest(response);
     if (statusRequest == StatusRequest.success) {
-      if (response['data'] == null || response['status'] == 'failure') {
-        statusRequest = StatusRequest.noData;
-      } else {
-        data.addAll(response['data']);
-      }
+      data.addAll(response['data']);
     }
     update();
   }

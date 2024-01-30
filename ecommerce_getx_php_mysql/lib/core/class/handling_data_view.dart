@@ -3,23 +3,37 @@ import 'package:ecommerce_getx_php_mysql/core/extensions/extension.dart';
 import 'package:flutter/material.dart';
 
 class HandlingDataView extends StatelessWidget {
-  const HandlingDataView({super.key, required this.statusRequest, required this.child});
+  const HandlingDataView({
+    super.key,
+    required this.statusRequest,
+    this.loadingWidget,
+    this.serverFailureWidget,
+    this.offlineFailureWidget,
+    this.errorWiget,
+    this.noDataWiget,
+    required this.successWidget,
+  });
   final StatusRequest statusRequest;
-  final Widget child;
+  final Widget? loadingWidget;
+  final Widget? serverFailureWidget;
+  final Widget? offlineFailureWidget;
+  final Widget? errorWiget;
+  final Widget? noDataWiget;
+  final Widget successWidget;
 
   @override
   Widget build(BuildContext context) {
     if (statusRequest == StatusRequest.loading) {
-      return const Text('Loading').cr;
+      return loadingWidget ?? const Text('Loading').cr;
     } else if (statusRequest == StatusRequest.offlineFailure) {
-      return const Text('Offline Failure').cr;
+      return offlineFailureWidget ?? const Text('Offline Failure').cr;
     } else if (statusRequest == StatusRequest.serverFailure) {
-      return const Text('Server Failure').cr;
+      return serverFailureWidget ?? const Text('Server Failure').cr;
     } else if (statusRequest == StatusRequest.error) {
-      return const Text('Error occured').cr;
+      return errorWiget ?? const Text('Error occured').cr;
     } else if (statusRequest == StatusRequest.noData) {
-      return const Text('Error in fetching data').cr;
+      return noDataWiget ?? const Text('Error in fetching data').cr;
     }
-    return child;
+    return successWidget;
   }
 }
