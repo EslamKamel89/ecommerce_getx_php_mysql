@@ -13,7 +13,6 @@ abstract class VerifyOtpSignupControllerAbstract extends GetxController {
 }
 
 class VerifyOtpSignupController extends VerifyOtpSignupControllerAbstract {
-  String correctCode = '11111';
   String enteredCode = '';
   String email = '';
   static Crud crud = Get.find();
@@ -30,7 +29,7 @@ class VerifyOtpSignupController extends VerifyOtpSignupControllerAbstract {
     if (statusRequest == StatusRequest.success) {
       'getData method in VerifyOtpSignUp'.prt;
       'statusRequest == StatusRequest.success'.pr;
-    } else {
+    } else if (statusRequest != StatusRequest.loading) {
       Future.delayed(const Duration(seconds: 2)).then(
         (value) {
           statusRequest = StatusRequest.initial;
@@ -43,11 +42,14 @@ class VerifyOtpSignupController extends VerifyOtpSignupControllerAbstract {
 
   @override
   void checkCode(String verificationCode) async {
-    enteredCode = verificationCode;
-    if (verificationCode == correctCode) {
+    if (verificationCode.length == 5) {
+      enteredCode = verificationCode;
       await getData();
       if (statusRequest == StatusRequest.success) {
         goToSignupSuccess();
+      } else {
+        'CheckCode method in verify otp sign up controller'.prt;
+        'wrong otp code'.pr;
       }
     }
   }

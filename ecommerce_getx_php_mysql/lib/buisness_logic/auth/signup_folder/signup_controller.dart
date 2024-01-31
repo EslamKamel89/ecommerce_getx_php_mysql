@@ -39,7 +39,7 @@ class SignupController extends SignupControllerAbstract {
       // data.addAll(response['data']);
       'getData method from signupController'.prt;
       'StatusRequest.success'.pr;
-    } else {
+    } else if (statusRequest != StatusRequest.loading) {
       Future.delayed(const Duration(seconds: 2)).then((value) {
         statusRequest = StatusRequest.initial;
         update();
