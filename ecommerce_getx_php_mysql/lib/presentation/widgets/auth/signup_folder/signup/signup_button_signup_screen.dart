@@ -1,3 +1,5 @@
+// ignore_for_file: dead_code
+
 import 'package:ecommerce_getx_php_mysql/buisness_logic/auth/signup_folder/signup_controller.dart';
 import 'package:ecommerce_getx_php_mysql/presentation/components/ui_components.dart';
 import 'package:flutter/material.dart';

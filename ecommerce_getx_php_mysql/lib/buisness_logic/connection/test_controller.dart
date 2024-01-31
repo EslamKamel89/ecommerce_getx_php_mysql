@@ -8,13 +8,18 @@ class TestController extends GetxController {
   static final Crud _crud = Get.find();
   TestData testData = TestData(_crud);
   List data = [];
-  late StatusRequest statusRequest;
+  StatusRequest statusRequest = StatusRequest.initial;
   Future getData() async {
     statusRequest = StatusRequest.loading;
-    var response = await testData.getData();
+    var response = await testData.postTest();
     statusRequest = handlingStatusRequest(response);
     if (statusRequest == StatusRequest.success) {
       data.addAll(response['data']);
+    } else {
+      Future.delayed(const Duration(seconds: 2)).then((value) {
+        statusRequest = StatusRequest.initial;
+        update();
+      });
     }
     update();
   }

@@ -20,7 +20,7 @@ class TestScreen extends StatelessWidget {
         builder: (controller) {
           return HandlingDataView(
             statusRequest: controller.statusRequest,
-            successWidget: ListView.builder(
+            child: ListView.builder(
               itemCount: controller.data.length.pr,
               itemBuilder: (context, index) {
                 return Card(

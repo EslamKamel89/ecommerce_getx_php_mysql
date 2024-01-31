@@ -15,7 +15,8 @@ class HandlingDataView extends StatelessWidget {
     this.offlineFailureWidget,
     this.errorWiget,
     this.noDataWiget,
-    required this.successWidget,
+    this.noDataTxt,
+    required this.child,
   });
   final StatusRequest statusRequest;
   final Widget? loadingWidget;
@@ -23,7 +24,8 @@ class HandlingDataView extends StatelessWidget {
   final Widget? offlineFailureWidget;
   final Widget? errorWiget;
   final Widget? noDataWiget;
-  final Widget successWidget;
+  final Widget child;
+  final String? noDataTxt;
 
   @override
   Widget build(BuildContext context) {
@@ -36,9 +38,9 @@ class HandlingDataView extends StatelessWidget {
     } else if (statusRequest == StatusRequest.error) {
       return errorWiget ?? _displayInfo(AppLotties.error, '');
     } else if (statusRequest == StatusRequest.noData) {
-      return noDataWiget ?? _displayInfo(AppLotties.nodata, '');
+      return noDataWiget ?? _displayInfo(AppLotties.nodata, noDataTxt ?? '');
     }
-    return successWidget;
+    return child;
   }
 
   Widget _displayInfo(String lottiePath, String info) {
