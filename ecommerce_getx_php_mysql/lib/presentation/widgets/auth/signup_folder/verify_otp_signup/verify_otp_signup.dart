@@ -10,7 +10,7 @@ class VeirifyOtpSignup extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    VerifyOtpSignupController verifyOtpSignupController = Get.find();
+    VerifyOtpSignupController controller = Get.find();
     return OtpTextField(
         numberOfFields: 5,
         borderRadius: BorderRadius.circular(50),
@@ -22,6 +22,6 @@ class VeirifyOtpSignup extends StatelessWidget {
           //handle validation or checks here
         },
         //runs when every textfield is filled
-        onSubmit: verifyOtpSignupController.checkCode);
+        onSubmit: controller.checkCode);
   }
 }

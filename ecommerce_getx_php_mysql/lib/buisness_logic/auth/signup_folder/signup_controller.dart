@@ -26,6 +26,8 @@ class SignupController extends SignupControllerAbstract {
   StatusRequest statusRequest = StatusRequest.initial;
   @override
   Future getData() async {
+    statusRequest = StatusRequest.loading;
+    update();
     var response = await signupData.postSignup(
       nameController.text,
       emailController.text,
@@ -70,7 +72,12 @@ class SignupController extends SignupControllerAbstract {
   signup() async {
     await getData();
     if (statusRequest == StatusRequest.success) {
-      Get.toNamed(AppRoutes.verifyOtpAfterSignup);
+      Get.toNamed(
+        AppRoutes.verifyOtpAfterSignup,
+        arguments: {
+          'email': emailController.text,
+        },
+      );
     }
   }
 

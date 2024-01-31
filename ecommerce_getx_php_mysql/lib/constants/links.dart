@@ -3,7 +3,7 @@ class AppLinks {
   static const String testLink = '$serverName/test.php';
   // ------------------------ Auth/signup ------------------------
   static const String signup = '$serverName/auth/signup.php';
-  // static const String Link = '$serverName/';
+  static const String verifycodeSignupLink = '$serverName/auth/verifycode.php';
   // static const String Link = '$serverName/';
   // static const String Link = '$serverName/';
   // static const String Link = '$serverName/';

@@ -39,7 +39,7 @@ class MyApp extends StatelessWidget {
       ),
       translations: MyTranslations(),
       locale: localeController.language,
-      initialRoute: AppRoutes.testScreen,
+      initialRoute: AppRoutes.signup,
       // initialRoute: AppRoutes.language,
       getPages: routesList,
     );
