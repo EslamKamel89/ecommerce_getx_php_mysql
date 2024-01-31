@@ -1,6 +1,6 @@
 import 'package:ecommerce_getx_php_mysql/core/class/crud.dart';
 import 'package:ecommerce_getx_php_mysql/core/class/status_request.dart';
-import 'package:ecommerce_getx_php_mysql/core/functions/handling_data.dart';
+import 'package:ecommerce_getx_php_mysql/core/functions/handling_status_request.dart';
 import 'package:ecommerce_getx_php_mysql/data/data_provider/remote/test_data.dart';
 import 'package:get/get.dart';
 
