@@ -1,6 +1,10 @@
+// ignore_for_file: unused_import, dead_code
+
+import 'package:ecommerce_getx_php_mysql/constants/lottie_assets.dart';
 import 'package:ecommerce_getx_php_mysql/core/class/status_request.dart';
 import 'package:ecommerce_getx_php_mysql/core/extensions/extension.dart';
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
 class HandlingDataView extends StatelessWidget {
   const HandlingDataView({
@@ -24,16 +28,30 @@ class HandlingDataView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (statusRequest == StatusRequest.loading) {
-      return loadingWidget ?? const Text('Loading').cr;
+      return loadingWidget ?? _displayInfo(AppLotties.loading, '');
     } else if (statusRequest == StatusRequest.offlineFailure) {
-      return offlineFailureWidget ?? const Text('Offline Failure').cr;
+      return offlineFailureWidget ?? _displayInfo(AppLotties.offline, 'No Internet');
     } else if (statusRequest == StatusRequest.serverFailure) {
-      return serverFailureWidget ?? const Text('Server Failure').cr;
+      return serverFailureWidget ?? _displayInfo(AppLotties.serverfailure, 'Server Failure');
     } else if (statusRequest == StatusRequest.error) {
-      return errorWiget ?? const Text('Error occured').cr;
+      return errorWiget ?? _displayInfo(AppLotties.error, '');
     } else if (statusRequest == StatusRequest.noData) {
-      return noDataWiget ?? const Text('Error in fetching data').cr;
+      return noDataWiget ?? _displayInfo(AppLotties.nodata, '');
     }
     return successWidget;
+  }
+
+  Widget _displayInfo(String lottiePath, String info) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        LottieBuilder.asset(lottiePath),
+        const SizedBox(width: double.infinity),
+        Text(
+          info,
+          style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+        ),
+      ],
+    );
   }
 }
