@@ -10,12 +10,18 @@ import 'package:ecommerce_getx_php_mysql/presentation/screens/language.dart';
 import 'package:ecommerce_getx_php_mysql/presentation/screens/onboarding.dart';
 import 'package:ecommerce_getx_php_mysql/presentation/screens/test.dart';
 import 'package:ecommerce_getx_php_mysql/presentation/themes/themes.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import 'firebase_options.dart';
 
 main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await initialServices();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(MyApp());
 }
 
