@@ -51,7 +51,7 @@ List<GetPage> routesList = [
   ),
   GetPage(
     name: AppRoutes.resetPassword,
-    page: () => const ResetPasswordScreen(),
+    page: () => ResetPasswordScreen(),
     bindings: [ResetPasswordBindings()],
   ),
   GetPage(

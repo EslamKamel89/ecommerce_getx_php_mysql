@@ -51,7 +51,10 @@ class ForgetPasswordController extends ForgetPasswordAbstract {
   goToVerifyCode() async {
     await getData();
     if (statusRequest == StatusRequest.success) {
-      Get.toNamed(AppRoutes.verifyOtpAfterResetPassword);
+      Get.toNamed(
+        AppRoutes.verifyOtpAfterResetPassword,
+        arguments: {'email': emailController.text},
+      );
     }
   }
 }

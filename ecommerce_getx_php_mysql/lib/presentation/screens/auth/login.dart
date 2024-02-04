@@ -31,6 +31,7 @@ class LoginScreen extends StatelessWidget {
         child: GetBuilder<LoginController>(builder: (controller) {
           return HandlingDataView(
             statusRequest: controller.statusRequest,
+            noDataTxt: 'Username Or Email Not Correct',
             child: Form(
               key: formKey,
               child: SafeArea(

@@ -12,10 +12,10 @@ class SaveButton extends StatelessWidget {
   Widget build(BuildContext context) {
     ResetPasswordController resetPasswordController = Get.find();
     return InkWell(
-      onTap: () {
+      onTap: () async {
         if (resetPasswordController.formKey.currentState!.validate()) {
           if (resetPasswordController.passOneController.text == resetPasswordController.passTwoController.text) {
-            resetPasswordController.goToResetPasswordSuccess();
+            await resetPasswordController.checkData();
           } else {
             Get.snackbar('WARNING'.tr, 'TWO_PASSWORD_DONT_MATCH'.tr);
           }
