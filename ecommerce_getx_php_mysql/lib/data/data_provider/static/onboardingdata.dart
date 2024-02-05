@@ -1,5 +1,5 @@
 import 'package:ecommerce_getx_php_mysql/constants/image_assets.dart';
-import 'package:ecommerce_getx_php_mysql/data/models/onboarding_model/onboardingmodel.dart';
+import 'package:ecommerce_getx_php_mysql/data/models/onboarding/onboarding_model.dart';
 
 List<OnBoarding> onBoardingList = [
   OnBoarding(

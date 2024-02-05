@@ -74,6 +74,8 @@ class MyTranslations extends Translations {
         'ALERT_CONTENT': 'Do You Want To Exit The APP',
         'CONFIRM': 'Confirm',
         'CANCEL': 'Cancel',
+        // homepage
+        'HOMEPAGE': 'Homepage',
       },
       'ar': {
         // onBoarding
