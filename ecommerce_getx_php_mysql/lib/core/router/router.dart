@@ -7,6 +7,7 @@ import 'package:ecommerce_getx_php_mysql/buisness_logic/auth/signup_folder/signu
 import 'package:ecommerce_getx_php_mysql/buisness_logic/auth/signup_folder/success_signup_controller.dart';
 import 'package:ecommerce_getx_php_mysql/buisness_logic/auth/signup_folder/verify_otp_signup_controller.dart';
 import 'package:ecommerce_getx_php_mysql/buisness_logic/connection/test_controller.dart';
+import 'package:ecommerce_getx_php_mysql/buisness_logic/homepage/homepage_controller.dart';
 import 'package:ecommerce_getx_php_mysql/buisness_logic/onboarding/onboarding_controller.dart';
 import 'package:ecommerce_getx_php_mysql/constants/routes_names.dart';
 import 'package:ecommerce_getx_php_mysql/core/middleware/middleware.dart';
@@ -18,6 +19,7 @@ import 'package:ecommerce_getx_php_mysql/presentation/screens/auth/login.dart';
 import 'package:ecommerce_getx_php_mysql/presentation/screens/auth/signup_folder/signup.dart';
 import 'package:ecommerce_getx_php_mysql/presentation/screens/auth/signup_folder/success_signup.dart';
 import 'package:ecommerce_getx_php_mysql/presentation/screens/auth/signup_folder/verify_otp_signup.dart';
+import 'package:ecommerce_getx_php_mysql/presentation/screens/homepage.dart';
 import 'package:ecommerce_getx_php_mysql/presentation/screens/language.dart';
 import 'package:ecommerce_getx_php_mysql/presentation/screens/onboarding.dart';
 import 'package:ecommerce_getx_php_mysql/presentation/screens/test.dart';
@@ -78,5 +80,10 @@ List<GetPage> routesList = [
     name: AppRoutes.testScreen,
     page: () => const TestScreen(),
     bindings: [TestScreenBindings()],
+  ),
+  GetPage(
+    name: AppRoutes.homepage,
+    page: () => Homepage(),
+    bindings: [HomepageBinding()],
   ),
 ];

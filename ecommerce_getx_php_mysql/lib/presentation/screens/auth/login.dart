@@ -9,7 +9,6 @@ import 'package:ecommerce_getx_php_mysql/presentation/widgets/auth/login/forgetp
 import 'package:ecommerce_getx_php_mysql/presentation/widgets/auth/login/signin_button.dart';
 import 'package:ecommerce_getx_php_mysql/presentation/widgets/auth/login/signin_welcome_text.dart';
 import 'package:ecommerce_getx_php_mysql/presentation/widgets/auth/login/signup_button.dart';
-import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -19,11 +18,7 @@ class LoginScreen extends StatelessWidget {
   LoginScreen({super.key});
   @override
   Widget build(BuildContext context) {
-    FirebaseMessaging.instance.getToken().then((value) {
-      'The current App TOKEN'.prt;
-      'Token: $value'.pr;
-    });
-
+    // services.sharedPreferences.clear();
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: CustomAppBar.defaultAppBar(context, 'SIGN_IN'.tr),

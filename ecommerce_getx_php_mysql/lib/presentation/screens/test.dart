@@ -1,6 +1,7 @@
 // ignore_for_file: unused_import
 
 import 'package:ecommerce_getx_php_mysql/buisness_logic/connection/test_controller.dart';
+import 'package:ecommerce_getx_php_mysql/buisness_logic/services/services_controller.dart';
 import 'package:ecommerce_getx_php_mysql/core/class/handling_data_view.dart';
 import 'package:ecommerce_getx_php_mysql/core/extensions/extension.dart';
 import 'package:ecommerce_getx_php_mysql/core/functions/check_internet.dart';
@@ -14,6 +15,8 @@ class TestScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     TestController controller = Get.find();
+    // InitServices service = Get.find();
+    // service.sharedPreferences.clear();
     return Scaffold(
       appBar: CustomAppBar.defaultAppBar(context, 'Test Screen'),
       body: GetBuilder<TestController>(
