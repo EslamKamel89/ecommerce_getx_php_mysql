@@ -8,6 +8,7 @@ import 'package:ecommerce_getx_php_mysql/presentation/widgets/onBoarding/buttons
 import 'package:ecommerce_getx_php_mysql/presentation/widgets/onBoarding/swipe.dart';
 import 'package:ecommerce_getx_php_mysql/presentation/widgets/onBoarding/swipedots.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 class OnBoardingScreen extends StatelessWidget {
@@ -30,7 +31,7 @@ class OnBoardingScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.7,
+                  height: MediaQuery.of(context).size.height * 0.6,
                   child: PageView.builder(
                     controller: onBoardingController.pageController,
                     onPageChanged: (value) {
@@ -45,7 +46,7 @@ class OnBoardingScreen extends StatelessWidget {
                 const SwipeDotsOnBoarding(),
                 const SizedBox().ex,
                 const ButtonsOnBoarding(),
-                const SizedBox(height: 15),
+                SizedBox(height: 15.h),
               ],
             ),
           ),

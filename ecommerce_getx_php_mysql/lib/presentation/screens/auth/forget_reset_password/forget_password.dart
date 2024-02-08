@@ -1,5 +1,6 @@
 import 'package:ecommerce_getx_php_mysql/buisness_logic/auth/forget_reset_password/forgetpassword_controller.dart';
 import 'package:ecommerce_getx_php_mysql/core/class/handling_data_view.dart';
+import 'package:ecommerce_getx_php_mysql/core/class/responsive_info.dart';
 import 'package:ecommerce_getx_php_mysql/presentation/components/appbar.dart';
 import 'package:ecommerce_getx_php_mysql/presentation/widgets/auth/forget_reset_password/forget_password/check_email_button.dart';
 import 'package:ecommerce_getx_php_mysql/presentation/widgets/auth/forget_reset_password/forget_password/email_form_field.dart';
@@ -25,11 +26,12 @@ class ForgetPasswordScreen extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: ListView(
-                  children: const [
-                    ForgetText(),
-                    SizedBox(height: 20),
-                    EmailFormField(),
-                    CheckEmailButton(),
+                  children: [
+                    const ForgetText(),
+                    SizedBox(height: Sze.w * 2),
+                    const EmailFormField(),
+                    SizedBox(height: Sze.w),
+                    const CheckEmailButton(),
                   ],
                 ),
               ),

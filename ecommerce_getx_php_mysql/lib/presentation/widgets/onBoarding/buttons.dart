@@ -2,6 +2,7 @@ import 'package:ecommerce_getx_php_mysql/buisness_logic/onboarding/onboarding_co
 import 'package:ecommerce_getx_php_mysql/presentation/components/color.dart';
 import 'package:ecommerce_getx_php_mysql/presentation/components/ui_components.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 class ButtonsOnBoarding extends GetView<OnBoardingController> {
@@ -26,7 +27,7 @@ class ButtonsOnBoarding extends GetView<OnBoardingController> {
           child: Text(
             'SKIP'.tr,
             textAlign: TextAlign.center,
-            style: const TextStyle(fontSize: 17, height: 2, color: AppColors.textLight),
+            style: TextStyle(fontSize: 17.sp, height: 2, color: AppColors.textLight),
           ),
         ),
       ],

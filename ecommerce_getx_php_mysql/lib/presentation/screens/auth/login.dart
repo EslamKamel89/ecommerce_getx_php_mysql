@@ -1,6 +1,7 @@
 import 'package:ecommerce_getx_php_mysql/buisness_logic/auth/login/login_controller.dart';
 import 'package:ecommerce_getx_php_mysql/buisness_logic/services/services_controller.dart';
 import 'package:ecommerce_getx_php_mysql/core/class/handling_data_view.dart';
+import 'package:ecommerce_getx_php_mysql/core/class/responsive_info.dart';
 import 'package:ecommerce_getx_php_mysql/core/extensions/extension.dart';
 import 'package:ecommerce_getx_php_mysql/core/functions/exit_app_alert.dart';
 import 'package:ecommerce_getx_php_mysql/presentation/components/appbar.dart';
@@ -46,7 +47,7 @@ class LoginScreen extends StatelessWidget {
                         child: ForgetPasswordButton(),
                       ),
                       SignInButton(formKey: formKey),
-                      const SizedBox(height: 20),
+                      SizedBox(height: Sze.h * 1),
                       Text(
                         "DON'T_HAVE_AN_ACCOUNT".tr,
                         style: Theme.of(context).textTheme.bodyMedium,

@@ -2,6 +2,7 @@ import 'package:ecommerce_getx_php_mysql/buisness_logic/locale/change_local_cont
 import 'package:ecommerce_getx_php_mysql/constants/routes_names.dart';
 import 'package:ecommerce_getx_php_mysql/presentation/components/ui_components.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 // will be shown for the first time you start the app and will ask the user to
@@ -12,7 +13,11 @@ class ChooseLanguageScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Choose Device Language'),
+        title: Text(
+          'Choose Device Language',
+          style: Theme.of(context).textTheme.headlineLarge?.copyWith(color: Colors.white),
+        ),
+        toolbarHeight: 50.h,
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),

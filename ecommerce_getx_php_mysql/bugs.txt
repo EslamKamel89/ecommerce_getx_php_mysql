@@ -1,0 +1,2 @@
+
+check email - reset password >> even if i entered email that doesn't exist the app will take me to the next screen 

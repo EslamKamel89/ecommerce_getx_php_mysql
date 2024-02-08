@@ -1,14 +1,14 @@
-import 'dart:io' as io;
+import 'package:http/http.dart' as http;
 
 Future<bool> checkInternet() async {
   try {
-    List<io.InternetAddress> result = await io.InternetAddress.lookup('google.com');
-    if (result.isNotEmpty && result[0].rawAddress.isNotEmpty) {
+    var result = await http.get(Uri.parse('google.com'));
+    if (result.statusCode == 200) {
       return true;
     } else {
       return false;
     }
-  } on io.SocketException catch (e) {
+  } catch (e) {
     return false;
   }
 }

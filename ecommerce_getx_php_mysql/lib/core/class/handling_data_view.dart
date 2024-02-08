@@ -4,6 +4,7 @@ import 'package:ecommerce_getx_php_mysql/constants/lottie_assets.dart';
 import 'package:ecommerce_getx_php_mysql/core/class/status_request.dart';
 import 'package:ecommerce_getx_php_mysql/core/extensions/extension.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lottie/lottie.dart';
 
 class HandlingDataView extends StatelessWidget {
@@ -47,11 +48,11 @@ class HandlingDataView extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        LottieBuilder.asset(lottiePath),
+        LottieBuilder.asset(lottiePath, width: double.infinity, height: 500.h),
         const SizedBox(width: double.infinity),
         Text(
           info,
-          style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+          style: TextStyle(fontSize: 20.sp, fontWeight: FontWeight.bold),
         ),
       ],
     );

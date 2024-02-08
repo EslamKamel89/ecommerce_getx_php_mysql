@@ -1,5 +1,6 @@
 import 'package:ecommerce_getx_php_mysql/presentation/components/color.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 // Text Form Field
@@ -168,7 +169,7 @@ class CustomFormField3 extends StatefulWidget {
   final bool obsecureAllow;
   final int? minLines;
   final String? title;
-  final Icon? icon;
+  final Widget? icon;
   final EntryType type;
   final int minChar;
   final int maxChar;
@@ -182,24 +183,25 @@ class _CustomFormFieldState3 extends State<CustomFormField3> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-      padding: const EdgeInsets.all(5),
+      margin: EdgeInsets.symmetric(horizontal: 10.w, vertical: 5.h),
+      padding: EdgeInsets.all(5.w),
       child: TextFormField(
         controller: widget.controller,
         validator: _validate,
         decoration: InputDecoration(
             hintText: _hint(),
+            hintStyle: TextStyle(fontSize: 15.sp, fontWeight: FontWeight.normal),
             label: Container(
-              margin: const EdgeInsets.symmetric(horizontal: 5),
+              margin: EdgeInsets.symmetric(horizontal: 5.w),
               color: Colors.transparent,
               child: Text(
                 _title(),
-                style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 20.sp, fontWeight: FontWeight.bold),
               ),
             ),
             floatingLabelBehavior: FloatingLabelBehavior.always,
             border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(20),
+              borderRadius: BorderRadius.circular(20.w),
             ),
             suffixIcon: !widget.obsecureAllow
                 ? widget.icon
@@ -208,7 +210,7 @@ class _CustomFormFieldState3 extends State<CustomFormField3> {
                       obsecure = !obsecure;
                       setState(() {});
                     },
-                    icon: const Icon(Icons.remove_red_eye),
+                    icon: Icon(Icons.remove_red_eye, size: 20.w),
                   )),
         obscureText: widget.obsecureAllow == false ? false : obsecure,
         minLines: widget.obsecureAllow ? 1 : widget.minLines,
@@ -327,16 +329,16 @@ class MaterialText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsetsDirectional.symmetric(vertical: verticalMargin ?? 5, horizontal: horizntalMargin ?? 5),
+      margin: EdgeInsetsDirectional.symmetric(vertical: verticalMargin ?? 5.h, horizontal: horizntalMargin ?? 5.w),
       width: width,
       height: height,
       child: Material(
         elevation: elevation,
-        borderRadius: BorderRadius.circular(10),
+        borderRadius: BorderRadius.circular(10.w),
         child: Container(
-          padding: const EdgeInsets.all(10),
+          padding: EdgeInsets.all(10.w),
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(10),
+            borderRadius: BorderRadius.circular(10.w),
             color: backgroundColor,
           ),
           child: Center(
@@ -381,16 +383,16 @@ class MaterialContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsetsDirectional.symmetric(vertical: verticalMargin ?? 5, horizontal: horizntalMargin ?? 5),
+      margin: EdgeInsetsDirectional.symmetric(vertical: verticalMargin ?? 5.h, horizontal: horizntalMargin ?? 5.w),
       width: width,
       height: height,
       child: Material(
         elevation: elevation,
-        borderRadius: BorderRadius.circular(10),
+        borderRadius: BorderRadius.circular(10.w),
         child: Container(
-          padding: const EdgeInsets.all(10),
+          padding: EdgeInsets.all(10.w),
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(10),
+            borderRadius: BorderRadius.circular(10.w),
             color: backgroundColor,
           ),
           child: child,
@@ -446,7 +448,7 @@ class CustomButtonColored extends StatelessWidget {
       backgroundColor: AppColors.backgroundColor1,
       onBackgroundColor: AppColors.onBackgroundColor1,
       elevation: 30,
-      horizntalMargin: 30,
+      horizntalMargin: 30.w,
     );
   }
 }
@@ -459,8 +461,8 @@ class CircularImageAsset extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: size ?? 30,
-      height: size ?? 30,
+      width: size ?? 30.w,
+      height: size ?? 30.h,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(size ?? 30),
         image: DecorationImage(

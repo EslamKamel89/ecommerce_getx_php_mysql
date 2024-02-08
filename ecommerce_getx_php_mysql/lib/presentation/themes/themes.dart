@@ -1,5 +1,6 @@
 import 'package:ecommerce_getx_php_mysql/presentation/components/color.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 enum DeviceLocale { en, ar }
 
@@ -8,15 +9,15 @@ enum ThemeType { dark, light }
 class Themes {
   static TextTheme _textThemeLocale(String fontFamily) {
     return TextTheme(
-      headlineLarge: TextStyle(fontFamily: fontFamily, fontWeight: FontWeight.bold, fontSize: 22, color: AppColors.textDark),
-      headlineMedium: TextStyle(fontFamily: fontFamily, fontWeight: FontWeight.bold, fontSize: 17, color: AppColors.textDark),
-      headlineSmall: TextStyle(fontFamily: fontFamily, fontWeight: FontWeight.bold, fontSize: 12, color: AppColors.textDark),
-      bodyLarge: TextStyle(fontFamily: fontFamily, fontSize: 20, height: 1.5, color: AppColors.textLight),
-      bodyMedium: TextStyle(fontFamily: fontFamily, fontSize: 15, height: 1.5, color: AppColors.textLight),
-      bodySmall: TextStyle(fontFamily: fontFamily, fontSize: 10, height: 1.5, color: AppColors.textLight),
-      displayLarge: TextStyle(fontFamily: fontFamily, fontSize: 20, color: AppColors.textDark),
-      displayMedium: TextStyle(fontFamily: fontFamily, fontSize: 15, color: AppColors.textDark),
-      displaySmall: TextStyle(fontFamily: fontFamily, fontSize: 10, color: AppColors.textDark),
+      headlineLarge: TextStyle(fontFamily: fontFamily, fontWeight: FontWeight.bold, fontSize: 22.sp, color: AppColors.textDark),
+      headlineMedium: TextStyle(fontFamily: fontFamily, fontWeight: FontWeight.bold, fontSize: 17.sp, color: AppColors.textDark),
+      headlineSmall: TextStyle(fontFamily: fontFamily, fontWeight: FontWeight.bold, fontSize: 12.sp, color: AppColors.textDark),
+      bodyLarge: TextStyle(fontFamily: fontFamily, fontSize: 20.sp, height: 1.5, color: AppColors.textLight),
+      bodyMedium: TextStyle(fontFamily: fontFamily, fontSize: 15.sp, height: 1.5, color: AppColors.textLight),
+      bodySmall: TextStyle(fontFamily: fontFamily, fontSize: 10.sp, height: 1.5, color: AppColors.textLight),
+      displayLarge: TextStyle(fontFamily: fontFamily, fontSize: 20.sp, color: AppColors.textDark),
+      displayMedium: TextStyle(fontFamily: fontFamily, fontSize: 15.sp, color: AppColors.textDark),
+      displaySmall: TextStyle(fontFamily: fontFamily, fontSize: 10.sp, color: AppColors.textDark),
     );
   }
 
