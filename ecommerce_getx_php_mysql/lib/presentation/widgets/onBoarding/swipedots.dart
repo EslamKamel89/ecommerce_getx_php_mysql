@@ -1,6 +1,6 @@
 import 'package:ecommerce_getx_php_mysql/buisness_logic/onboarding/onboarding_controller.dart';
+import 'package:ecommerce_getx_php_mysql/constants/color.dart';
 import 'package:ecommerce_getx_php_mysql/data/data_provider/static/onboardingdata.dart';
-import 'package:ecommerce_getx_php_mysql/presentation/components/color.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

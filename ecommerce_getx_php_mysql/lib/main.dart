@@ -40,6 +40,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Sze.init(context);
+    Themes.init(context);
     localeController = Get.find<LocaleController>();
     if (localeController.language!.languageCode == 'ar') {
       deviceLocale = DeviceLocale.ar;

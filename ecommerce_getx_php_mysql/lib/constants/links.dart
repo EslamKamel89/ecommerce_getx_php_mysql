@@ -10,7 +10,8 @@ class AppLinks {
   static const String checkemailLink = '$serverName/forgetpassword/checkemail_forgetpassword.php';
   static const String verifyCodeForgetPasswordLink = '$serverName/forgetpassword/verifycode_forgetpassword.php';
   static const String resetPassworLink = '$serverName/forgetpassword/resetpassword.php';
-  // static const String Link = '$serverName/';
+  // ------------------------ Categories View ------------------------
+  static const String categoriesViewLink = '$serverName/categories/view.php';
   // static const String Link = '$serverName/';
   // static const String Link = '$serverName/';
   // static const String Link = '$serverName/';

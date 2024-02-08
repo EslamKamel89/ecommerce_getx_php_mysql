@@ -1,4 +1,4 @@
-import 'package:ecommerce_getx_php_mysql/presentation/components/color.dart';
+import 'package:ecommerce_getx_php_mysql/constants/color.dart';
 import 'package:flutter/material.dart';
 
 class CheckIconFromSuccessResetPassword extends StatelessWidget {

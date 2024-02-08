@@ -1,4 +1,4 @@
-import 'package:ecommerce_getx_php_mysql/presentation/components/color.dart';
+import 'package:ecommerce_getx_php_mysql/constants/color.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -7,6 +7,28 @@ enum DeviceLocale { en, ar }
 enum ThemeType { dark, light }
 
 class Themes {
+  static late TextStyle headlineLarge;
+  static late TextStyle headlineMedium;
+  static late TextStyle headlineSmall;
+  static late TextStyle bodyLarge;
+  static late TextStyle bodyMedium;
+  static late TextStyle bodySmall;
+  static late TextStyle displayLarge;
+  static late TextStyle displayMedium;
+  static late TextStyle displaySmall;
+
+  static void init(BuildContext context) {
+    headlineLarge = Theme.of(context).textTheme.headlineLarge!;
+    headlineMedium = Theme.of(context).textTheme.headlineMedium!;
+    headlineSmall = Theme.of(context).textTheme.headlineSmall!;
+    bodyLarge = Theme.of(context).textTheme.bodyLarge!;
+    bodyMedium = Theme.of(context).textTheme.bodyMedium!;
+    bodySmall = Theme.of(context).textTheme.bodySmall!;
+    displayLarge = Theme.of(context).textTheme.displayLarge!;
+    displayMedium = Theme.of(context).textTheme.displayMedium!;
+    displaySmall = Theme.of(context).textTheme.displaySmall!;
+  }
+
   static TextTheme _textThemeLocale(String fontFamily) {
     return TextTheme(
       headlineLarge: TextStyle(fontFamily: fontFamily, fontWeight: FontWeight.bold, fontSize: 22.sp, color: AppColors.textDark),
