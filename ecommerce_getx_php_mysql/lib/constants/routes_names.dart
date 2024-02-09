@@ -10,7 +10,7 @@ class AppRoutes {
   static const String resetPasswordSuccess = '/ResetPasswordSuccessScreen';
   static const String signupSuccess = '/SignupSuccessScreen';
   static const String verifyOtpAfterSignup = '/VerifyOtpSignupScreen';
-  static const String homepage = '/Homepage';
+  static const String mainpage = '/Mainpage';
   // static const String resetPassword = '/ResetPassword';
   // static const String resetPassword = '/ResetPassword';
   // static const String resetPassword = '/ResetPassword';

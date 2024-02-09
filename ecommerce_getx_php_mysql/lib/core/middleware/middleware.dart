@@ -12,7 +12,7 @@ class StartScreenMiddleware extends GetMiddleware {
     bool onBoardingViewed = services.sharedPreferences.getBool('ONBOARDING_VIEWED') ?? false;
     bool userSignin = services.sharedPreferences.getBool('USER_SIGNIN') ?? false;
     if (userSignin) {
-      return const RouteSettings(name: AppRoutes.homepage);
+      return const RouteSettings(name: AppRoutes.mainpage);
     }
     if (onBoardingViewed) {
       return const RouteSettings(name: AppRoutes.login);

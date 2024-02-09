@@ -18,6 +18,7 @@ class HandlingDataView extends StatelessWidget {
     this.noDataWiget,
     this.noDataTxt,
     required this.child,
+    this.height,
   });
   final StatusRequest statusRequest;
   final Widget? loadingWidget;
@@ -27,6 +28,7 @@ class HandlingDataView extends StatelessWidget {
   final Widget? noDataWiget;
   final Widget child;
   final String? noDataTxt;
+  final double? height;
 
   @override
   Widget build(BuildContext context) {
@@ -48,7 +50,7 @@ class HandlingDataView extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        LottieBuilder.asset(lottiePath, width: double.infinity, height: 500.h),
+        LottieBuilder.asset(lottiePath, width: double.infinity, height: height ?? 500.h),
         const SizedBox(width: double.infinity),
         Text(
           info,

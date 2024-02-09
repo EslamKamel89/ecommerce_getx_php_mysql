@@ -12,7 +12,12 @@ class AppLinks {
   static const String resetPassworLink = '$serverName/forgetpassword/resetpassword.php';
   // ------------------------ Categories View ------------------------
   static const String categoriesViewLink = '$serverName/categories/view.php';
-  // static const String Link = '$serverName/';
+  // ------------------------ Home View ------------------------
+  static const String homeViewLink = '$serverName/home.php';
+  // ------------------------ Categories images path ------------------------
+  static const String categoriyImagePath = '$serverName/upload/categories/';
+  // ------------------------ items images path ------------------------
+  static const String itemsImagePath = '$serverName/upload/items/';
   // static const String Link = '$serverName/';
   // static const String Link = '$serverName/';
   // static const String Link = '$serverName/';

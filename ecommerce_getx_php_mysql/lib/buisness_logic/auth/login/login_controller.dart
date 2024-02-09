@@ -71,7 +71,7 @@ class LoginController extends LoginControllerAbstract {
   login() async {
     await getData();
     if (statusRequest == StatusRequest.success) {
-      Get.toNamed(AppRoutes.homepage);
+      Get.toNamed(AppRoutes.mainpage);
     } else {
       Future.delayed(const Duration(seconds: 2)).then((value) {
         statusRequest = StatusRequest.initial;
