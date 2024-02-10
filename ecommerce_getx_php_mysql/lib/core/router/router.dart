@@ -18,6 +18,7 @@ import 'package:ecommerce_getx_php_mysql/presentation/screens/auth/login.dart';
 import 'package:ecommerce_getx_php_mysql/presentation/screens/auth/signup_folder/signup.dart';
 import 'package:ecommerce_getx_php_mysql/presentation/screens/auth/signup_folder/success_signup.dart';
 import 'package:ecommerce_getx_php_mysql/presentation/screens/auth/signup_folder/verify_otp_signup.dart';
+import 'package:ecommerce_getx_php_mysql/presentation/screens/items.dart';
 import 'package:ecommerce_getx_php_mysql/presentation/screens/language.dart';
 import 'package:ecommerce_getx_php_mysql/presentation/screens/mainpage/mainpage.dart';
 import 'package:ecommerce_getx_php_mysql/presentation/screens/onboarding.dart';
@@ -83,6 +84,11 @@ List<GetPage> routesList = [
   GetPage(
     name: AppRoutes.mainpage,
     page: () => const MainPage(),
+    // bindings: [HomepageBinding()],
+  ),
+  GetPage(
+    name: AppRoutes.items,
+    page: () => ItemsScreen(),
     // bindings: [HomepageBinding()],
   ),
 ];
