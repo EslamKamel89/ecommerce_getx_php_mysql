@@ -1,0 +1,9 @@
+{
+    "emmet.useInlineCompletions": true,
+    "editor.suggest.selectionMode": "never",
+    "editor.quickSuggestions": {
+        "other": "inline",
+        "comments": "inline",
+        "strings": "inline"
+    }
+}

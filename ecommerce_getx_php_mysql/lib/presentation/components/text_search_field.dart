@@ -5,9 +5,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class CustomSearchField extends StatelessWidget {
   const CustomSearchField({
     super.key,
+    this.title,
     this.controller,
     this.searchIconButton,
   });
+  final String? title;
   final TextEditingController? controller;
   final void Function()? searchIconButton;
   @override
@@ -31,7 +33,7 @@ class CustomSearchField extends StatelessWidget {
             child: TextFormField(
               controller: controller,
               decoration: InputDecoration(
-                hintText: 'Search Products',
+                hintText: title ?? 'Search',
                 hintStyle: TextStyle(fontSize: 20.sp),
                 border: const OutlineInputBorder(borderSide: BorderSide.none),
                 enabledBorder: const OutlineInputBorder(borderSide: BorderSide.none),

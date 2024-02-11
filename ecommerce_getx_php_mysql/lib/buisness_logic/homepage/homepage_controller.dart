@@ -1,3 +1,4 @@
+import 'package:ecommerce_getx_php_mysql/constants/routes_names.dart';
 import 'package:ecommerce_getx_php_mysql/core/class/crud.dart';
 import 'package:ecommerce_getx_php_mysql/core/class/status_request.dart';
 import 'package:ecommerce_getx_php_mysql/core/extensions/extension.dart';
@@ -10,6 +11,7 @@ import 'package:get/get.dart';
 
 abstract class HomepageControllerAbstract extends GetxController {
   fetchData();
+  goToItem(List allCategories, CategoriesModel category);
 }
 
 class HomepageController extends HomepageControllerAbstract {
@@ -54,11 +56,19 @@ class HomepageController extends HomepageControllerAbstract {
     }
     update();
   }
+
+  @override
+  goToItem(List allCategories, CategoriesModel category) {
+    Get.toNamed(
+      AppRoutes.items,
+      arguments: {'selectedCategory': category, 'allCategories': allCategories},
+    );
+  }
 }
 
 class HomepageBinding extends Bindings {
   @override
   void dependencies() {
-    Get.put(HomepageController());
+    Get.lazyPut(() => HomepageController(), fenix: true);
   }
 }

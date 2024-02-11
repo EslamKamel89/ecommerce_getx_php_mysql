@@ -7,6 +7,7 @@ import 'package:ecommerce_getx_php_mysql/buisness_logic/auth/signup_folder/signu
 import 'package:ecommerce_getx_php_mysql/buisness_logic/auth/signup_folder/success_signup_controller.dart';
 import 'package:ecommerce_getx_php_mysql/buisness_logic/auth/signup_folder/verify_otp_signup_controller.dart';
 import 'package:ecommerce_getx_php_mysql/buisness_logic/connection/test_controller.dart';
+import 'package:ecommerce_getx_php_mysql/buisness_logic/items/items_controller.dart';
 import 'package:ecommerce_getx_php_mysql/buisness_logic/onboarding/onboarding_controller.dart';
 import 'package:ecommerce_getx_php_mysql/constants/routes_names.dart';
 import 'package:ecommerce_getx_php_mysql/core/middleware/middleware.dart';
@@ -89,6 +90,6 @@ List<GetPage> routesList = [
   GetPage(
     name: AppRoutes.items,
     page: () => ItemsScreen(),
-    // bindings: [HomepageBinding()],
+    bindings: [ItemBindings()],
   ),
 ];

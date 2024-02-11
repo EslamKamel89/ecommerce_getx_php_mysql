@@ -1,7 +1,6 @@
 import 'package:ecommerce_getx_php_mysql/buisness_logic/homepage/homepage_controller.dart';
 import 'package:ecommerce_getx_php_mysql/constants/color.dart';
 import 'package:ecommerce_getx_php_mysql/constants/links.dart';
-import 'package:ecommerce_getx_php_mysql/constants/routes_names.dart';
 import 'package:ecommerce_getx_php_mysql/core/extensions/extension.dart';
 import 'package:ecommerce_getx_php_mysql/data/models/home/categories_model.dart';
 import 'package:ecommerce_getx_php_mysql/presentation/themes/themes.dart';
@@ -29,7 +28,7 @@ class CategoriesRow extends StatelessWidget {
             CategoriesModel category = controller.categoriesList[index];
             return InkWell(
               onTap: () {
-                Get.toNamed(AppRoutes.items, arguments: category);
+                homepageController.goToItem(homepageController.categoriesList, category);
               },
               child: CategoryView(
                 category: category,

@@ -1,5 +1,4 @@
 import 'package:ecommerce_getx_php_mysql/buisness_logic/homepage/homepage_controller.dart';
-import 'package:ecommerce_getx_php_mysql/buisness_logic/services/services_controller.dart';
 import 'package:ecommerce_getx_php_mysql/constants/color.dart';
 import 'package:ecommerce_getx_php_mysql/presentation/themes/themes.dart';
 import 'package:ecommerce_getx_php_mysql/presentation/widgets/mainpage/homepage/categories_row.dart';
@@ -16,7 +15,7 @@ class Homepage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final HomepageController homepageController = Get.put(HomepageController());
-    InitServices service = Get.find();
+    // InitServices service = Get.find();
     // service.sharedPreferences.clear();
     // String? userJson = service.sharedPreferences.getString('user');
     // User currentUser;
@@ -37,7 +36,7 @@ class Homepage extends StatelessWidget {
             SizedBox(height: 5.h),
             Row(
               children: [
-                SearchField(rightMargin: 10.w),
+                HomepageSearchField(rightMargin: 10.w),
                 const NotificationsButton(),
               ],
             ),

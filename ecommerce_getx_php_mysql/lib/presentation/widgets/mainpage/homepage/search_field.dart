@@ -3,8 +3,8 @@ import 'package:ecommerce_getx_php_mysql/presentation/components/text_search_fie
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class SearchField extends StatelessWidget {
-  SearchField({super.key, this.leftMargin, this.rightMargin});
+class HomepageSearchField extends StatelessWidget {
+  HomepageSearchField({super.key, this.leftMargin, this.rightMargin});
   final double? leftMargin;
   final double? rightMargin;
   final HomepageController homepageController = Get.find();
@@ -13,6 +13,7 @@ class SearchField extends StatelessWidget {
     return Container(
       margin: EdgeInsets.only(left: leftMargin ?? 0, right: rightMargin ?? 0),
       child: CustomSearchField(
+        title: 'Search Categories',
         controller: homepageController.searchController,
         searchIconButton: () {},
       ),
