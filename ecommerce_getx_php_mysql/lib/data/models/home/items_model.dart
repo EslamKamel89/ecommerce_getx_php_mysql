@@ -2,46 +2,46 @@ import 'dart:convert';
 
 // ignore_for_file: public_member_api_docs, sort_constructors_first, prefer_null_aware_operators
 
-class ItemsModel {
-  int? itemsId;
+class ItemModel {
+  String? itemsId;
   String? itemsName;
   String? itemsNameAr;
   String? itemsDesc;
   String? itemsDescAr;
   String? itemsImage;
-  int? itemsCount;
-  int? itemsActive;
-  int? itemsPrice;
-  int? itemsDiscount;
+  String? itemsCount;
+  String? itemsActive;
+  String? itemsPrice;
+  String? itemsDiscount;
   String? itemsDatetime;
-  int? itemsCategoriesId;
-  int? categoriesId;
+  String? itemsCategoriesId;
+  String? categoriesId;
   String? categoriesName;
   String? categoriesNameAr;
   String? categoriesImage;
   String? categoriesDatetime;
 
-  ItemsModel({this.itemsId, this.itemsName, this.itemsNameAr, this.itemsDesc, this.itemsDescAr, this.itemsImage, this.itemsCount, this.itemsActive, this.itemsPrice, this.itemsDiscount, this.itemsDatetime, this.itemsCategoriesId, this.categoriesId, this.categoriesName, this.categoriesNameAr, this.categoriesImage, this.categoriesDatetime});
+  ItemModel({this.itemsId, this.itemsName, this.itemsNameAr, this.itemsDesc, this.itemsDescAr, this.itemsImage, this.itemsCount, this.itemsActive, this.itemsPrice, this.itemsDiscount, this.itemsDatetime, this.itemsCategoriesId, this.categoriesId, this.categoriesName, this.categoriesNameAr, this.categoriesImage, this.categoriesDatetime});
 
-  factory ItemsModel.fromMap(Map<String, dynamic> map) {
-    ItemsModel model = ItemsModel();
-    model.itemsId = map['items_id'];
-    model.itemsName = map['items_name'];
-    model.itemsNameAr = map['items_name_ar'];
-    model.itemsDesc = map['items_desc'];
-    model.itemsDescAr = map['items_desc_ar'];
-    model.itemsImage = map['items_image'];
-    model.itemsCount = map['items_count'];
-    model.itemsActive = map['items_active'];
-    model.itemsPrice = map['items_price'];
-    model.itemsDiscount = map['items_discount'];
-    model.itemsDatetime = map['items_datetime'];
-    model.itemsCategoriesId = map['items_categories_id'];
-    model.categoriesId = map['categories_id'];
-    model.categoriesName = map['categories_name'];
-    model.categoriesNameAr = map['categories_name_ar'];
-    model.categoriesImage = map['categories_image'];
-    model.categoriesDatetime = map['categories_datetime'];
+  factory ItemModel.fromMap(Map<String, dynamic> map) {
+    ItemModel model = ItemModel();
+    model.itemsId = map['items_id'].toString();
+    model.itemsName = map['items_name'].toString();
+    model.itemsNameAr = map['items_name_ar'].toString();
+    model.itemsDesc = map['items_desc'].toString();
+    model.itemsDescAr = map['items_desc_ar'].toString();
+    model.itemsImage = map['items_image'].toString();
+    model.itemsCount = map['items_count'].toString();
+    model.itemsActive = map['items_active'].toString();
+    model.itemsPrice = map['items_price'].toString();
+    model.itemsDiscount = map['items_discount'].toString();
+    model.itemsDatetime = map['items_datetime'].toString();
+    model.itemsCategoriesId = map['items_categories_id'].toString();
+    model.categoriesId = map['categories_id'].toString();
+    model.categoriesName = map['categories_name'].toString();
+    model.categoriesNameAr = map['categories_name_ar'].toString();
+    model.categoriesImage = map['categories_image'].toString();
+    model.categoriesDatetime = map['categories_datetime'].toString();
     return model;
   }
 
@@ -69,10 +69,10 @@ class ItemsModel {
 
   String toJson() => json.encode(toMap());
 
-  factory ItemsModel.fromJson(String source) => ItemsModel.fromMap(json.decode(source) as Map<String, dynamic>);
+  factory ItemModel.fromJson(String source) => ItemModel.fromMap(json.decode(source) as Map<String, dynamic>);
 
   @override
-  bool operator ==(covariant ItemsModel other) {
+  bool operator ==(covariant ItemModel other) {
     if (identical(this, other)) return true;
 
     return other.itemsId == itemsId &&

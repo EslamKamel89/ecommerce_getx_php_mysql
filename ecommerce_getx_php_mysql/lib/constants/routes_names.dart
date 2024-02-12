@@ -12,7 +12,7 @@ class AppRoutes {
   static const String verifyOtpAfterSignup = '/VerifyOtpSignupScreen';
   static const String mainpage = '/Mainpage';
   static const String items = '/Items';
-  // static const String resetPassword = '/ResetPassword';
+  static const String itemsDetails = '/ItemsDetails';
   // static const String resetPassword = '/ResetPassword';
   // static const String resetPassword = '/ResetPassword';
   // static const String resetPassword = '/ResetPassword';

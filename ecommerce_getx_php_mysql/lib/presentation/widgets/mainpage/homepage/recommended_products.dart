@@ -27,7 +27,7 @@ class RecommededProducts extends StatelessWidget {
               itemCount: controller.itemsList.length,
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) {
-                ItemsModel item = controller.itemsList[index];
+                ItemModel item = controller.itemsList[index];
                 return InkWell(
                   onTap: () {},
                   child: Container(
@@ -105,7 +105,7 @@ class ProductImage extends StatelessWidget {
     required this.item,
   });
 
-  final ItemsModel item;
+  final ItemModel item;
 
   @override
   Widget build(BuildContext context) {

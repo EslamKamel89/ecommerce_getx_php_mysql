@@ -2,7 +2,7 @@
 import 'dart:convert';
 
 class CategoriesModel {
-  int? categoriesId;
+  String? categoriesId;
   String? categoriesName;
   String? categoriesNameAr;
   String? categoriesImage;
@@ -12,11 +12,11 @@ class CategoriesModel {
 
   factory CategoriesModel.fromMap(Map<String, dynamic> map) {
     CategoriesModel model = CategoriesModel();
-    model.categoriesId = map['categories_id'];
-    model.categoriesName = map['categories_name'];
-    model.categoriesNameAr = map['categories_name_ar'];
-    model.categoriesImage = map['categories_image'];
-    model.categoriesDatetime = map['categories_datetime'];
+    model.categoriesId = map['categories_id'].toString();
+    model.categoriesName = map['categories_name'].toString();
+    model.categoriesNameAr = map['categories_name_ar'].toString();
+    model.categoriesImage = map['categories_image'].toString();
+    model.categoriesDatetime = map['categories_datetime'].toString();
     return model;
   }
 

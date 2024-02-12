@@ -14,6 +14,8 @@ class AppLinks {
   static const String categoriesViewLink = '$serverName/categories/view.php';
   // ------------------------ Home View ------------------------
   static const String homeViewLink = '$serverName/home.php';
+  // ------------------------ items by category View ------------------------
+  static const String itemsLink = '$serverName/items/items.php';
   // ------------------------ Categories images path ------------------------
   static const String categoriyImagePath = '$serverName/upload/categories/';
   // ------------------------ items images path ------------------------

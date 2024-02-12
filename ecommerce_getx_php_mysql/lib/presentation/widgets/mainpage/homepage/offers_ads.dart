@@ -1,4 +1,5 @@
 import 'package:ecommerce_getx_php_mysql/constants/color.dart';
+import 'package:ecommerce_getx_php_mysql/core/localization/translate_database.dart';
 import 'package:ecommerce_getx_php_mysql/presentation/themes/themes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -74,7 +75,8 @@ class DecoratedContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Positioned(
-      right: -30.w,
+      right: TrService.isEn ? -30.w : null,
+      left: TrService.isEn ? null : -30.w,
       top: -30.w,
       child: Container(
         width: 150.w,

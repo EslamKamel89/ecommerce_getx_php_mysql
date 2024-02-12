@@ -19,10 +19,10 @@ class HomepageController extends HomepageControllerAbstract {
   final HomepageData homepageData = HomepageData(crud);
 
   late List<CategoriesModel> categoriesList;
-  late List<ItemsModel> itemsList;
+  late List<ItemModel> itemsList;
   StatusRequest statusRequest = StatusRequest.initial;
   late CategoriesModel _categoriesModel;
-  late ItemsModel _itemsModel;
+  late ItemModel _itemsModel;
   late List _tempList;
 
   TextEditingController searchController = TextEditingController();
@@ -39,7 +39,7 @@ class HomepageController extends HomepageControllerAbstract {
     if (statusRequest == StatusRequest.success) {
       _tempList = response['data']['items'];
       for (var item in _tempList) {
-        _itemsModel = ItemsModel.fromMap(item).pr;
+        _itemsModel = ItemModel.fromMap(item).pr;
         itemsList.add(_itemsModel);
       }
       _tempList.clear();

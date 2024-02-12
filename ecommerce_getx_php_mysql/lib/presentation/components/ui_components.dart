@@ -438,8 +438,9 @@ class CompactTextField extends StatelessWidget {
 }
 
 class CustomButtonColored extends StatelessWidget {
-  const CustomButtonColored({super.key, required this.title});
+  const CustomButtonColored({super.key, required this.title, this.height});
   final String title;
+  final double? height;
 
   @override
   Widget build(BuildContext context) {
@@ -449,6 +450,7 @@ class CustomButtonColored extends StatelessWidget {
       onBackgroundColor: AppColors.onBackgroundColor1,
       elevation: 30,
       horizntalMargin: 30.w,
+      height: height,
     );
   }
 }

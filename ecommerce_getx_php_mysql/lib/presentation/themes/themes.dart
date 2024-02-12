@@ -31,15 +31,15 @@ class Themes {
 
   static TextTheme _textThemeLocale(String fontFamily) {
     return TextTheme(
-      headlineLarge: TextStyle(fontFamily: fontFamily, fontWeight: FontWeight.bold, fontSize: 22.sp, color: AppColors.textDark),
-      headlineMedium: TextStyle(fontFamily: fontFamily, fontWeight: FontWeight.bold, fontSize: 17.sp, color: AppColors.textDark),
-      headlineSmall: TextStyle(fontFamily: fontFamily, fontWeight: FontWeight.bold, fontSize: 12.sp, color: AppColors.textDark),
-      bodyLarge: TextStyle(fontFamily: fontFamily, fontSize: 20.sp, height: 1.5, color: AppColors.textLight),
-      bodyMedium: TextStyle(fontFamily: fontFamily, fontSize: 15.sp, height: 1.5, color: AppColors.textLight),
-      bodySmall: TextStyle(fontFamily: fontFamily, fontSize: 10.sp, height: 1.5, color: AppColors.textLight),
-      displayLarge: TextStyle(fontFamily: fontFamily, fontSize: 20.sp, color: AppColors.textDark),
-      displayMedium: TextStyle(fontFamily: fontFamily, fontSize: 15.sp, color: AppColors.textDark),
-      displaySmall: TextStyle(fontFamily: fontFamily, fontSize: 10.sp, color: AppColors.textDark),
+      headlineLarge: TextStyle(/*fontFamily: fontFamily,*/ fontWeight: FontWeight.bold, fontSize: 22.sp, color: AppColors.textDark),
+      headlineMedium: TextStyle(/*fontFamily: fontFamily,*/ fontWeight: FontWeight.bold, fontSize: 17.sp, color: AppColors.textDark),
+      headlineSmall: TextStyle(/*fontFamily: fontFamily,*/ fontWeight: FontWeight.bold, fontSize: 12.sp, color: AppColors.textDark),
+      bodyLarge: TextStyle(/*fontFamily: fontFamily,*/ fontSize: 20.sp, height: 1.5, color: AppColors.textLight),
+      bodyMedium: TextStyle(/*fontFamily: fontFamily,*/ fontSize: 15.sp, height: 1.5, color: AppColors.textLight),
+      bodySmall: TextStyle(/*fontFamily: fontFamily,*/ fontSize: 10.sp, height: 1.5, color: AppColors.textLight),
+      displayLarge: TextStyle(/*fontFamily: fontFamily,*/ fontSize: 20.sp, color: AppColors.textDark),
+      displayMedium: TextStyle(/*fontFamily: fontFamily,*/ fontSize: 15.sp, color: AppColors.textDark),
+      displaySmall: TextStyle(/*fontFamily: fontFamily,*/ fontSize: 10.sp, color: AppColors.textDark),
     );
   }
 

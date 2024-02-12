@@ -1,5 +1,6 @@
 import 'package:ecommerce_getx_php_mysql/buisness_logic/items/items_controller.dart';
 import 'package:ecommerce_getx_php_mysql/constants/color.dart';
+import 'package:ecommerce_getx_php_mysql/core/localization/translate_database.dart';
 import 'package:ecommerce_getx_php_mysql/data/models/home/categories_model.dart';
 import 'package:ecommerce_getx_php_mysql/presentation/themes/themes.dart';
 import 'package:flutter/material.dart';
@@ -22,15 +23,15 @@ class ChooseCategoryRow extends StatelessWidget {
           itemBuilder: (context, index) {
             CategoriesModel currentCat = allCategories[index];
             return InkWell(
-              onTap: () {
+              onTap: () async {
                 // itemController.goToItems(allCategories, currentCat);
-                itemController.changeCategory(currentCat);
+                await itemController.changeCategory(currentCat);
               },
               child: Column(
                 children: [
                   _decoratedContainer(
                     child: Text(
-                      currentCat.categoriesName ?? 'null',
+                      TrService.trDb(en: currentCat.categoriesName!, ar: currentCat.categoriesNameAr!),
                       style: Themes.bodyMedium.copyWith(
                         color: AppColors.onBackgroundColor1,
                       ),

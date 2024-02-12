@@ -2,6 +2,7 @@ import 'package:ecommerce_getx_php_mysql/buisness_logic/homepage/homepage_contro
 import 'package:ecommerce_getx_php_mysql/constants/color.dart';
 import 'package:ecommerce_getx_php_mysql/constants/links.dart';
 import 'package:ecommerce_getx_php_mysql/core/extensions/extension.dart';
+import 'package:ecommerce_getx_php_mysql/core/localization/translate_database.dart';
 import 'package:ecommerce_getx_php_mysql/data/models/home/categories_model.dart';
 import 'package:ecommerce_getx_php_mysql/presentation/themes/themes.dart';
 import 'package:flutter/material.dart';
@@ -54,7 +55,7 @@ class CategoryView extends StatelessWidget {
             child: Image.network('${AppLinks.categoriyImagePath}${category.categoriesImage}'),
           ),
         ),
-        Text(category.categoriesName!, style: Themes.bodyMedium),
+        Text(TrService.trDb(en: category.categoriesName!, ar: category.categoriesNameAr), style: Themes.bodyMedium),
       ],
     );
   }
@@ -71,7 +72,7 @@ class DecoratedContainer extends StatelessWidget {
       height: 80.w,
       width: 80.w,
       decoration: BoxDecoration(
-        color: const Color.fromARGB(255, 159, 223, 233),
+        color: AppColors.backgroundColor1.withOpacity(0.2),
         border: Border.all(color: AppColors.backgroundColor1, width: 2.w),
         borderRadius: BorderRadius.circular(100),
       ),
