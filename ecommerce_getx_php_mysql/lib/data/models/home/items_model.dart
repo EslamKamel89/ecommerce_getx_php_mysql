@@ -20,8 +20,27 @@ class ItemModel {
   String? categoriesNameAr;
   String? categoriesImage;
   String? categoriesDatetime;
-
-  ItemModel({this.itemsId, this.itemsName, this.itemsNameAr, this.itemsDesc, this.itemsDescAr, this.itemsImage, this.itemsCount, this.itemsActive, this.itemsPrice, this.itemsDiscount, this.itemsDatetime, this.itemsCategoriesId, this.categoriesId, this.categoriesName, this.categoriesNameAr, this.categoriesImage, this.categoriesDatetime});
+  String? favorite;
+  ItemModel({
+    this.itemsId,
+    this.itemsName,
+    this.itemsNameAr,
+    this.itemsDesc,
+    this.itemsDescAr,
+    this.itemsImage,
+    this.itemsCount,
+    this.itemsActive,
+    this.itemsPrice,
+    this.itemsDiscount,
+    this.itemsDatetime,
+    this.itemsCategoriesId,
+    this.categoriesId,
+    this.categoriesName,
+    this.categoriesNameAr,
+    this.categoriesImage,
+    this.categoriesDatetime,
+    this.favorite,
+  });
 
   factory ItemModel.fromMap(Map<String, dynamic> map) {
     ItemModel model = ItemModel();
@@ -42,8 +61,10 @@ class ItemModel {
     model.categoriesNameAr = map['categories_name_ar'].toString();
     model.categoriesImage = map['categories_image'].toString();
     model.categoriesDatetime = map['categories_datetime'].toString();
+    model.favorite = map['favorite_item'].toString();
     return model;
   }
+// favorite_item
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
@@ -64,6 +85,7 @@ class ItemModel {
       'categories_name_ar': categoriesNameAr,
       'categories_image': categoriesImage,
       'categories_datetime': categoriesDatetime,
+      'favorite_item': favorite,
     };
   }
 
@@ -91,7 +113,8 @@ class ItemModel {
         other.categoriesName == categoriesName &&
         other.categoriesNameAr == categoriesNameAr &&
         other.categoriesImage == categoriesImage &&
-        other.categoriesDatetime == categoriesDatetime;
+        other.categoriesDatetime == categoriesDatetime &&
+        other.favorite == favorite;
   }
 
   @override
@@ -112,11 +135,12 @@ class ItemModel {
         categoriesName.hashCode ^
         categoriesNameAr.hashCode ^
         categoriesImage.hashCode ^
-        categoriesDatetime.hashCode;
+        categoriesDatetime.hashCode ^
+        favorite.hashCode;
   }
 
   @override
   String toString() {
-    return 'ItemsModel(itemsId: $itemsId, itemsName: $itemsName, itemsNameAr: $itemsNameAr, itemsDesc: $itemsDesc, itemsDescAr: $itemsDescAr, itemsImage: $itemsImage, itemsCount: $itemsCount, itemsActive: $itemsActive, itemsPrice: $itemsPrice, itemsDiscount: $itemsDiscount, itemsDatetime: $itemsDatetime, itemsCategoriesId: $itemsCategoriesId, categoriesId: $categoriesId, categoriesName: $categoriesName, categoriesNameAr: $categoriesNameAr, categoriesImage: $categoriesImage, categoriesDatetime: $categoriesDatetime)';
+    return 'ItemsModel(itemsId: $itemsId, itemsName: $itemsName, itemsNameAr: $itemsNameAr, itemsDesc: $itemsDesc, itemsDescAr: $itemsDescAr, itemsImage: $itemsImage, itemsCount: $itemsCount, itemsActive: $itemsActive, itemsPrice: $itemsPrice, itemsDiscount: $itemsDiscount, itemsDatetime: $itemsDatetime, itemsCategoriesId: $itemsCategoriesId, categoriesId: $categoriesId, categoriesName: $categoriesName, categoriesNameAr: $categoriesNameAr, categoriesImage: $categoriesImage, categoriesDatetime: $categoriesDatetime , favorite: $favorite)';
   }
 }

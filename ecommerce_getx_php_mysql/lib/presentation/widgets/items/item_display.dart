@@ -1,3 +1,4 @@
+import 'package:ecommerce_getx_php_mysql/buisness_logic/favorite/favorite_controller.dart';
 import 'package:ecommerce_getx_php_mysql/buisness_logic/items/items_controller.dart';
 import 'package:ecommerce_getx_php_mysql/constants/color.dart';
 import 'package:ecommerce_getx_php_mysql/constants/links.dart';
@@ -46,7 +47,7 @@ class ItemDisplay extends StatelessWidget {
             right: TrService.isEn ? 5.w : null,
             left: TrService.isEn ? null : 5.w,
             bottom: 5.w,
-            child: _favoriteButton(),
+            child: FavoriteButton(itemModel: itemModel),
           ),
           Positioned(
             left: TrService.isEn ? 5.w : null,
@@ -77,17 +78,6 @@ class ItemDisplay extends StatelessWidget {
           ),
         ],
       ),
-    );
-  }
-
-  IconButton _favoriteButton() {
-    return IconButton(
-      icon: Icon(
-        Icons.favorite_border_outlined,
-        size: 30.w,
-        color: AppColors.red,
-      ),
-      onPressed: () {},
     );
   }
 
@@ -155,5 +145,30 @@ class ItemDisplay extends StatelessWidget {
         ),
       ),
     );
+  }
+}
+
+class FavoriteButton extends StatelessWidget {
+  const FavoriteButton({super.key, required this.itemModel});
+  final ItemModel itemModel;
+
+  @override
+  Widget build(BuildContext context) {
+    return GetBuilder<FavoriteController>(builder: (favoriteController) {
+      bool isFavorite = false;
+      if (favoriteController.favoriteItems[itemModel.itemsId].toString() == '1') {
+        isFavorite = true;
+      }
+      return IconButton(
+        icon: Icon(
+          isFavorite ? Icons.favorite : Icons.favorite_border_outlined,
+          size: 30.w,
+          color: AppColors.red,
+        ),
+        onPressed: () {
+          isFavorite ? favoriteController.setFavorite(itemModel.itemsId!, '0') : favoriteController.setFavorite(itemModel.itemsId!, '1');
+        },
+      );
+    });
   }
 }

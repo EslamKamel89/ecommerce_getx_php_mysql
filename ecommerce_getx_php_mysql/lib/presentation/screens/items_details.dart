@@ -17,7 +17,6 @@ class ItemDetailsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     Themes.init(context);
     return Scaffold(
-      // appBar: CustomAppBar.defaultAppBar(context, cont.itemModel.itemsName!),
       bottomNavigationBar: addToCartButton(),
       body: ListView(
         children: [

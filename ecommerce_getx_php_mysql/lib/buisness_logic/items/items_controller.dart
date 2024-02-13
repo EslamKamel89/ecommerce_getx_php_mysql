@@ -1,3 +1,4 @@
+import 'package:ecommerce_getx_php_mysql/buisness_logic/favorite/favorite_controller.dart';
 import 'package:ecommerce_getx_php_mysql/constants/routes_names.dart';
 import 'package:ecommerce_getx_php_mysql/core/class/crud.dart';
 import 'package:ecommerce_getx_php_mysql/core/class/status_request.dart';
@@ -22,6 +23,7 @@ class ItemController extends ItemControllerAbstract {
   ItemModel itemsModel = ItemModel();
   StatusRequest statusRequest = StatusRequest.initial;
   ItemsData itemsData = ItemsData(Get.find<Crud>());
+  FavoriteController favoriteController = Get.find();
 
   @override
   Future getItems() async {
@@ -43,6 +45,7 @@ class ItemController extends ItemControllerAbstract {
         update();
       });
     }
+    favoriteController.getFavorite(itemsList);
     update();
   }
 
