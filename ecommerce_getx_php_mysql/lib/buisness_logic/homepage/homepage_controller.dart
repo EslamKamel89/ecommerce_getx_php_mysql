@@ -12,6 +12,7 @@ import 'package:get/get.dart';
 abstract class HomepageControllerAbstract extends GetxController {
   fetchData();
   goToItem(List allCategories, CategoriesModel category);
+  goToFavorite();
 }
 
 class HomepageController extends HomepageControllerAbstract {
@@ -63,6 +64,11 @@ class HomepageController extends HomepageControllerAbstract {
       AppRoutes.items,
       arguments: {'selectedCategory': category, 'allCategories': allCategories},
     );
+  }
+
+  @override
+  goToFavorite() {
+    Get.toNamed(AppRoutes.favorite);
   }
 }
 

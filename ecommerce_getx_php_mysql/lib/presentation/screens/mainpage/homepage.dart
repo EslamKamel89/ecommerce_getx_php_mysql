@@ -4,6 +4,7 @@ import 'package:ecommerce_getx_php_mysql/buisness_logic/services/services_contro
 import 'package:ecommerce_getx_php_mysql/constants/color.dart';
 import 'package:ecommerce_getx_php_mysql/presentation/themes/themes.dart';
 import 'package:ecommerce_getx_php_mysql/presentation/widgets/mainpage/homepage/categories_row.dart';
+import 'package:ecommerce_getx_php_mysql/presentation/widgets/mainpage/homepage/favorite_button.dart';
 import 'package:ecommerce_getx_php_mysql/presentation/widgets/mainpage/homepage/notification_button.dart';
 import 'package:ecommerce_getx_php_mysql/presentation/widgets/mainpage/homepage/offers_ads.dart';
 import 'package:ecommerce_getx_php_mysql/presentation/widgets/mainpage/homepage/recommended_products.dart';
@@ -37,9 +38,11 @@ class Homepage extends StatelessWidget {
           children: [
             SizedBox(height: 5.h),
             Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                HomepageSearchField(rightMargin: 10.w),
+                HomepageSearchField(),
                 const NotificationsButton(),
+                const FavoriteButton(),
               ],
             ),
             const OffersAds(),

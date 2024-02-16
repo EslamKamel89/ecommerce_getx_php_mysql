@@ -13,7 +13,7 @@ class AppRoutes {
   static const String mainpage = '/Mainpage';
   static const String items = '/Items';
   static const String itemsDetails = '/ItemsDetails';
-  // static const String resetPassword = '/ResetPassword';
+  static const String favorite = '/Favorite';
   // static const String resetPassword = '/ResetPassword';
   // static const String resetPassword = '/ResetPassword';
   // static const String resetPassword = '/ResetPassword';

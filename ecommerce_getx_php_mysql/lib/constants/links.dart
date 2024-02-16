@@ -1,5 +1,5 @@
 class AppLinks {
-  static const String serverName = 'http://172.24.112.1/ecommerce';
+  static const String serverName = 'http://172.19.80.1/ecommerce';
   static const String testLink = '$serverName/test.php';
   // ------------------------ Auth/signup ------------------------
   static const String signup = '$serverName/auth/signup.php';
@@ -20,6 +20,14 @@ class AppLinks {
   static const String categoriyImagePath = '$serverName/upload/categories/';
   // ------------------------ items images path ------------------------
   static const String itemsImagePath = '$serverName/upload/items/';
+  // ------------------------ favorite add and remove ------------------------
+  static const String addFavoriteLink = '$serverName/favorite/add.php';
+  static const String removeFavoriteLink = '$serverName/favorite/remove.php';
+  static const String getFavoriteLink = '$serverName/favorite/getfavorite.php';
+  // static const String Link = '$serverName/';
+  // static const String Link = '$serverName/';
+  // static const String Link = '$serverName/';
+  // static const String Link = '$serverName/';
   // static const String Link = '$serverName/';
   // static const String Link = '$serverName/';
   // static const String Link = '$serverName/';

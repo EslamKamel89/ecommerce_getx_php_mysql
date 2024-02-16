@@ -1,6 +1,7 @@
 import 'package:ecommerce_getx_php_mysql/buisness_logic/homepage/homepage_controller.dart';
 import 'package:ecommerce_getx_php_mysql/presentation/components/text_search_field.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 class HomepageSearchField extends StatelessWidget {
@@ -15,6 +16,7 @@ class HomepageSearchField extends StatelessWidget {
       child: CustomSearchField(
         title: 'Search Categories',
         controller: homepageController.searchController,
+        width: 220.w,
         searchIconButton: () {},
       ),
     );

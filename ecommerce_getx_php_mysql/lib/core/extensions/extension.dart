@@ -1,10 +1,29 @@
 import 'package:flutter/material.dart';
 
+// yellow
+String _toYellow(String text) {
+  return '\x1B[33m$text\x1B[0m';
+}
+
+// red
+String _toRed(String text) {
+  return '\x1B[31m$text\x1B[0m';
+}
+
+// blue
+String _toBlue(String text) {
+  return '\x1B[34m$text\x1B[0m';
+}
+
+//green
+String _toGreen(String text) {
+  return '\x1B[32m$text\x1B[0m';
+}
+
 extension PrintToConsole on Object? {
   get pr {
-    print(' .................... ');
-    print('$this');
-    print(' .................... ');
+    String message = _toYellow('[LOG] [B O D Y > > ] ') + _toGreen('$this');
+    print(message);
     return this;
   }
 }
@@ -17,8 +36,8 @@ extension DontPrintToConsole on Object? {
 
 extension PrintTitleToConsole on Object? {
   get prt {
-    print('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>');
-    print('>>>>> $this >>>>>');
+    String message = _toRed('[LOG] [T I T L E > ] ') + _toRed('$this');
+    print(message);
     return this;
   }
 }

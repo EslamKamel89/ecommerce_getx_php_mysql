@@ -8,10 +8,12 @@ class CustomSearchField extends StatelessWidget {
     this.title,
     this.controller,
     this.searchIconButton,
+    this.width,
   });
   final String? title;
   final TextEditingController? controller;
   final void Function()? searchIconButton;
+  final double? width;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -24,12 +26,13 @@ class CustomSearchField extends StatelessWidget {
       ),
       alignment: Alignment.center,
       child: Row(
-        mainAxisSize: MainAxisSize.max,
+        mainAxisAlignment: MainAxisAlignment.start,
+        mainAxisSize: MainAxisSize.min,
         children: [
           SizedBox(width: 10.w),
           InkWell(onTap: searchIconButton, child: Icon(Icons.search, size: 25.w)),
           SizedBox(
-            width: 250.w,
+            width: width ?? 200.w,
             child: TextFormField(
               controller: controller,
               decoration: InputDecoration(
