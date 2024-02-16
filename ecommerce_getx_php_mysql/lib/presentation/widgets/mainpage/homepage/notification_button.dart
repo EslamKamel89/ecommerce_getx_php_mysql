@@ -10,7 +10,7 @@ class NotificationsButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {},
-      child: Icon(Icons.notifications_active_outlined, size: 25.w),
+      child: Icon(Icons.notifications_active_outlined, size: 35.w),
     );
   }
 }
