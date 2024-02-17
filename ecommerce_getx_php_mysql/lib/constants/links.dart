@@ -24,7 +24,7 @@ class AppLinks {
   static const String addFavoriteLink = '$serverName/favorite/add.php';
   static const String removeFavoriteLink = '$serverName/favorite/remove.php';
   static const String getFavoriteLink = '$serverName/favorite/getfavorite.php';
-  // static const String Link = '$serverName/';
+  static const String resetOtpLink = '$serverName/auth/resend_otp.php';
   // static const String Link = '$serverName/';
   // static const String Link = '$serverName/';
   // static const String Link = '$serverName/';

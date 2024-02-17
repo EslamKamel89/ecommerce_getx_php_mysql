@@ -35,15 +35,15 @@ class LoginController extends LoginControllerAbstract {
       'statusRequest == StatusRequest.success'.pr;
       data = [];
       data.add(response['data']);
-      // initServices.sharedPreferences.setString('id', data[0]['users_id'].toString());
-      // initServices.sharedPreferences.setString('name', data[0]['users_name'].toString());
-      // initServices.sharedPreferences.setString('email', data[0]['users_email'].toString());
-      // initServices.sharedPreferences.setString('phone', data[0]['users_phone'].toString());
-      // initServices.sharedPreferences.setString('createTime', data[0]['users_createtime'].toString());
       User currentUser = User.fromMap(data[0]);
-      String userJson = currentUser.toJson();
-      initServices.sharedPreferences.setString('user', userJson);
-      initServices.sharedPreferences.setBool('USER_SIGNIN', true);
+      if (currentUser.approve == '0') {
+        Get.toNamed(AppRoutes.verifyOtpAfterSignup, arguments: {'email': currentUser.email});
+        statusRequest = StatusRequest.initial;
+      } else {
+        String userJson = currentUser.toJson();
+        initServices.sharedPreferences.setString('user', userJson);
+        initServices.sharedPreferences.setBool('USER_SIGNIN', true);
+      }
     } else if (statusRequest != StatusRequest.loading) {
       Future.delayed(const Duration(seconds: 2)).then((value) {
         statusRequest = StatusRequest.initial;

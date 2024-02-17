@@ -1,9 +1,11 @@
 import 'package:ecommerce_getx_php_mysql/buisness_logic/auth/signup_folder/verify_otp_signup_controller.dart';
 import 'package:ecommerce_getx_php_mysql/core/class/handling_data_view.dart';
 import 'package:ecommerce_getx_php_mysql/presentation/components/appbar.dart';
+import 'package:ecommerce_getx_php_mysql/presentation/widgets/auth/signup_folder/verify_otp_signup/resend_otp_button.dart';
 import 'package:ecommerce_getx_php_mysql/presentation/widgets/auth/signup_folder/verify_otp_signup/verify_otp_signup.dart';
 import 'package:ecommerce_getx_php_mysql/presentation/widgets/auth/signup_folder/verify_otp_signup/verify_otp_signup_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 class VerifyOtpSignupScreen extends StatelessWidget {
@@ -29,9 +31,11 @@ class VerifyOtpSignupScreen extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: ListView(
-                    children: const [
-                      VerifyOtpSignupText(),
-                      VeirifyOtpSignup(),
+                    children: [
+                      const VerifyOtpSignupText(),
+                      const VeirifyOtpSignup(),
+                      SizedBox(height: 30.h),
+                      const ResendVerificationCodeButton(),
                     ],
                   ),
                 ),

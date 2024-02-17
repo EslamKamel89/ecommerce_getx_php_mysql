@@ -10,6 +10,7 @@ abstract class VerifyOtpSignupControllerAbstract extends GetxController {
   checkCode(String verificationCode);
   goToSignupSuccess();
   getData();
+  resendOtp();
 }
 
 class VerifyOtpSignupController extends VerifyOtpSignupControllerAbstract {
@@ -57,6 +58,17 @@ class VerifyOtpSignupController extends VerifyOtpSignupControllerAbstract {
   @override
   goToSignupSuccess() {
     Get.toNamed(AppRoutes.signupSuccess);
+  }
+
+  @override
+  resendOtp() async {
+    var response = await verifyOtpSignupData.resendOtpData(email);
+    var otpStatusRequest = handlingStatusRequest(response);
+    if (otpStatusRequest == StatusRequest.success) {
+      Get.snackbar('OTP resended succesfully ', 'Please Check Your Email');
+    } else {
+      Get.snackbar('Failed To Send Otp ', 'Please Try Again');
+    }
   }
 }
 
