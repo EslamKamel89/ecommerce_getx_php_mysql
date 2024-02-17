@@ -32,7 +32,7 @@ class _MainPageState extends State<MainPage> {
       floatingActionButtonAnimator: FloatingActionButtonAnimator.scaling,
       bottomNavigationBar: BottomAppBar(
         shape: Sze.mobile ? const CircularNotchedRectangle() : null,
-        height: 60.h,
+        height: 40.h,
         color: AppColors.backgroundColor1.withOpacity(0.1),
         child: bottomBarIconsRow(updateMainpageUi, index),
       ),

@@ -1,6 +1,7 @@
 import 'package:ecommerce_getx_php_mysql/core/extensions/extension.dart';
 import 'package:ecommerce_getx_php_mysql/data/models/mainpage/mainpage_bottom_bar_navigation.dart';
-import 'package:ecommerce_getx_php_mysql/presentation/screens/mainpage/homepage.dart';
+import 'package:ecommerce_getx_php_mysql/presentation/screens/homepage.dart';
+import 'package:ecommerce_getx_php_mysql/presentation/screens/settings_screen.dart';
 import 'package:flutter/material.dart';
 
 class MainpageData {
@@ -12,10 +13,10 @@ class MainpageData {
       child: const Homepage(),
     ),
     MainpageModel(
-      title: 'Favorite',
+      title: 'Alerts',
       index: 1,
-      icon: Icons.star,
-      child: const Text('Favorite').cr,
+      icon: Icons.notifications_active_rounded,
+      child: const Text('Alerts').cr,
     ),
     MainpageModel(
       title: 'Profile',
@@ -27,7 +28,7 @@ class MainpageData {
       title: 'Settings',
       index: 3,
       icon: Icons.settings,
-      child: const Text('Settings').cr,
+      child: const SettingsScreen(),
     ),
     MainpageModel(
       title: 'Cart',

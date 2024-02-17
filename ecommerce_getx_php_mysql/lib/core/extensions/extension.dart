@@ -42,6 +42,14 @@ extension PrintTitleToConsole on Object? {
   }
 }
 
+extension PrintTitleAndMessageToConsole on Object? {
+  prm(String title) {
+    title.prt;
+    pr;
+    return this;
+  }
+}
+
 extension CenterOneWidget on Widget {
   Widget get cr => Center(child: this);
 }

@@ -27,24 +27,16 @@ class BottomNavigationIcon extends StatefulWidget {
 class _BottomNavigationIconState extends State<BottomNavigationIcon> {
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: () {
-        widget.callback(widget.mainpageModel.index);
-      },
-      child: Container(
-        padding: EdgeInsets.only(bottom: 10.h),
-        margin: EdgeInsets.only(left: widget.leftMargin ?? 0, right: widget.rightMargin ?? 0),
-        child: Stack(
-          clipBehavior: Clip.none,
-          alignment: Alignment.bottomCenter,
-          children: [
-            _bottomBarIcon(),
-            Positioned(
-              bottom: -15.h,
-              child: _bottomBarText(),
-            ),
-          ],
-        ),
+    return Container(
+      padding: EdgeInsets.only(bottom: 10.h),
+      margin: EdgeInsets.only(left: widget.leftMargin ?? 0, right: widget.rightMargin ?? 0),
+      child: Stack(
+        clipBehavior: Clip.none,
+        alignment: Alignment.bottomCenter,
+        children: [
+          _bottomBarIcon(),
+          // Positioned(bottom: -15.h, child: _bottomBarText()),
+        ],
       ),
     );
   }

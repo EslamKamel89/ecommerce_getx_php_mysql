@@ -14,16 +14,21 @@ Row bottomBarIconsRow(Function(int) callback, int currentIndex) {
         MainpageData.list.length - 1,
         (i) {
           MainpageModel mainpage = MainpageData.list[i];
-          return BottomNavigationIcon(
-            mainpageModel: mainpage,
-            callback: callback,
-            currentIndex: currentIndex,
-            color: i == currentIndex
-                ? //
-                AppColors.backgroundColor1
-                : AppColors.onBackgroundColor2.withOpacity(0.7),
-            leftMargin: mainpage.index == 2 ? 25.w : null,
-            rightMargin: mainpage.index == 1 ? 25.w : null,
+          return InkWell(
+            onTap: () {
+              callback(mainpage.index);
+            },
+            child: BottomNavigationIcon(
+              mainpageModel: mainpage,
+              callback: callback,
+              currentIndex: currentIndex,
+              color: i == currentIndex
+                  ? //
+                  AppColors.backgroundColor1
+                  : AppColors.onBackgroundColor2.withOpacity(0.7),
+              leftMargin: mainpage.index == 2 ? 25.w : null,
+              rightMargin: mainpage.index == 1 ? 25.w : null,
+            ),
           );
         },
       ),
