@@ -6,13 +6,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 class ItemImageView extends StatelessWidget {
-  const ItemImageView({
+  ItemImageView({
     super.key,
   });
+  final ItemDetailsController cont = Get.find();
 
   @override
   Widget build(BuildContext context) {
-    ItemDetailsController cont = Get.find();
     return Stack(
       alignment: Alignment.center,
       clipBehavior: Clip.none,
@@ -57,16 +57,18 @@ class ItemImageView extends StatelessWidget {
     );
   }
 
-  Container _backgroundColor() {
-    return Container(
-      height: 150.h,
-      width: double.infinity,
-      decoration: BoxDecoration(
-        color: AppColors.backgroundColor1.withOpacity(0.5),
-        borderRadius: BorderRadius.vertical(
-          bottom: Radius.circular(40.w),
+  Widget _backgroundColor() {
+    return GetBuilder<ItemDetailsController>(builder: (cont) {
+      return Container(
+        height: cont.itemCountInCart > 0 ? 125.h : 160.h,
+        width: double.infinity,
+        decoration: BoxDecoration(
+          color: AppColors.backgroundColor1.withOpacity(0.5),
+          borderRadius: BorderRadius.vertical(
+            bottom: Radius.circular(40.w),
+          ),
         ),
-      ),
-    );
+      );
+    });
   }
 }

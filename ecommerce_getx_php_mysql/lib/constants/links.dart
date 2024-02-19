@@ -25,7 +25,11 @@ class AppLinks {
   static const String removeFavoriteLink = '$serverName/favorite/remove.php';
   static const String getFavoriteLink = '$serverName/favorite/getfavorite.php';
   static const String resetOtpLink = '$serverName/auth/resend_otp.php';
-  // static const String Link = '$serverName/';
+  // ------------------------ cart ------------------------
+  static const String addToCartLink = '$serverName/cart/add_edit_cart.php';
+  static const String delelteItemFromCartLink = '$serverName/cart/delete_cart.php';
+  static const String viewCartLink = '$serverName/cart/view_cart.php';
+  static const String getItemCountInCartLink = '$serverName/cart/get_count_items_cart.php';
   // static const String Link = '$serverName/';
   // static const String Link = '$serverName/';
   // static const String Link = '$serverName/';

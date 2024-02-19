@@ -22,7 +22,7 @@ String _toGreen(String text) {
 
 extension PrintToConsole on Object? {
   get pr {
-    String message = _toYellow('[LOG] [B O D Y > > ] ') + _toGreen('$this');
+    String message = _toGreen('[LOG] [B O D Y > > ] ') + _toGreen('$this');
     print(message);
     return this;
   }
@@ -43,10 +43,22 @@ extension PrintTitleToConsole on Object? {
 }
 
 extension PrintTitleAndMessageToConsole on Object? {
-  prm(String title) {
-    title.prt;
-    pr;
+  prm(String t) {
+    // t.prt;
+    String title = '${_toYellow('[LOG] [B O D Y > > ] ')}${_toYellow(t)} >> ${_toGreen(toString())}';
+    print(title);
+    // pr;
     return this;
+  }
+}
+
+extension AddS on String {
+  String s(int number) {
+    if (number > 1) {
+      return '${this}s';
+    } else {
+      return this;
+    }
   }
 }
 

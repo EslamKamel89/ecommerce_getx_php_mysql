@@ -1,7 +1,9 @@
 import 'package:ecommerce_getx_php_mysql/buisness_logic/items_details/items_details_controller.dart';
+import 'package:ecommerce_getx_php_mysql/constants/color.dart';
 import 'package:ecommerce_getx_php_mysql/presentation/themes/themes.dart';
 import 'package:ecommerce_getx_php_mysql/presentation/widgets/item_details/add_to_cart_button.dart';
 import 'package:ecommerce_getx_php_mysql/presentation/widgets/item_details/avaliable_colors.dart';
+import 'package:ecommerce_getx_php_mysql/presentation/widgets/item_details/cart_details.dart';
 import 'package:ecommerce_getx_php_mysql/presentation/widgets/item_details/item_image_view.dart';
 import 'package:ecommerce_getx_php_mysql/presentation/widgets/item_details/item_name_description.dart';
 import 'package:ecommerce_getx_php_mysql/presentation/widgets/item_details/item_price.dart';
@@ -18,11 +20,13 @@ class ItemDetailsScreen extends StatelessWidget {
     Themes.init(context);
     return Scaffold(
       bottomNavigationBar: addToCartButton(),
+      floatingActionButton: _floatingActionButton(),
+      floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
       body: ListView(
         children: [
-          const ItemImageView(),
+          ItemImageView(),
           Container(
-            margin: EdgeInsets.only(top: 100.h),
+            margin: EdgeInsets.only(top: 70.h),
             padding: EdgeInsets.symmetric(horizontal: 15.w),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -30,10 +34,26 @@ class ItemDetailsScreen extends StatelessWidget {
                 ItemNameAndDescription(),
                 const AvaliableColorsView(),
                 ItemPrice(),
+                GetBuilder<ItemDetailsController>(builder: (cont) {
+                  return Visibility(visible: cont.itemCountInCart > 0, child: CartDetails());
+                }),
               ],
             ),
           ),
         ],
+      ),
+    );
+  }
+
+  FloatingActionButton _floatingActionButton() {
+    return FloatingActionButton(
+      onPressed: () {
+        cont.goToCart();
+      },
+      child: Icon(
+        Icons.shopping_cart,
+        size: 30.w,
+        color: AppColors.backgroundColor1,
       ),
     );
   }

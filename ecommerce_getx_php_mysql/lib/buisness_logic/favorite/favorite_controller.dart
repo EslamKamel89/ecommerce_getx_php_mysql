@@ -72,7 +72,7 @@ class FavoriteController extends FavoriteAbstract {
     InitServices services = Get.find();
     User currentUser = User.fromJson(services.sharedPreferences.getString('user')!);
     String id = currentUser.id;
-    'User ID is fetched from shared preferences in getUserIdFromCache method inside favorite controller'.prt;
+    'getUserIdFromCache - favoriteController'.prt;
     id.pr;
     return id;
   }

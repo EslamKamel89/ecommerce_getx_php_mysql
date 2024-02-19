@@ -7,12 +7,12 @@ import 'package:get/get.dart';
 
 class ItemPrice extends StatelessWidget {
   ItemPrice({super.key});
-  final ItemDetailsController cont = Get.find();
+  final ItemDetailsController controller = Get.find();
 
   @override
   Widget build(BuildContext context) {
     return Column(children: [
-      SizedBox(height: 15.h),
+      SizedBox(height: 10.h),
       Text('Choose Quantity', style: Themes.headlineLarge),
       SizedBox(height: 5.h),
       Row(
@@ -20,20 +20,26 @@ class ItemPrice extends StatelessWidget {
           SizedBox(width: 15.w),
           _removeQuatityButton(),
           SizedBox(width: 10.w),
-          _actualQuantity(),
+          GetBuilder<ItemDetailsController>(builder: (_) {
+            return _actualQuantity();
+          }),
           SizedBox(width: 10.w),
           _addQuantityButton(),
           const Spacer(),
-          _totalPrice(cont),
+          GetBuilder<ItemDetailsController>(builder: (_) {
+            return _totalPrice();
+          }),
           SizedBox(width: 15.w),
         ],
       ),
     ]);
   }
 
-  Text _totalPrice(ItemDetailsController cont) {
+  Text _totalPrice() {
+    final itemModel = controller.itemModel;
+    final totalPrice = int.parse(itemModel.itemsPrice!) * controller.productQuantity;
     return Text(
-      "${cont.itemModel.itemsPrice!} EGP",
+      "$totalPrice EGP",
       style: Themes.headlineLarge.copyWith(
         color: AppColors.red.withOpacity(0.8),
         fontWeight: FontWeight.bold,
@@ -43,14 +49,16 @@ class ItemPrice extends StatelessWidget {
 
   Text _actualQuantity() {
     return Text(
-      '1',
+      controller.productQuantity.toString(),
       style: Themes.headlineLarge.copyWith(fontWeight: FontWeight.bold),
     );
   }
 
   InkWell _addQuantityButton() {
     return InkWell(
-      onTap: () {},
+      onTap: () {
+        controller.incrementQuantity();
+      },
       child: Icon(
         Icons.add_circle_rounded,
         size: 30.w,
@@ -61,7 +69,9 @@ class ItemPrice extends StatelessWidget {
 
   InkWell _removeQuatityButton() {
     return InkWell(
-      onTap: () {},
+      onTap: () {
+        controller.decrementQuantity();
+      },
       child: Icon(
         Icons.remove_circle_rounded,
         size: 30.w,

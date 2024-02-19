@@ -6,6 +6,8 @@ import 'package:ecommerce_getx_php_mysql/buisness_logic/auth/login/login_control
 import 'package:ecommerce_getx_php_mysql/buisness_logic/auth/signup_folder/signup_controller.dart';
 import 'package:ecommerce_getx_php_mysql/buisness_logic/auth/signup_folder/success_signup_controller.dart';
 import 'package:ecommerce_getx_php_mysql/buisness_logic/auth/signup_folder/verify_otp_signup_controller.dart';
+import 'package:ecommerce_getx_php_mysql/buisness_logic/cart/cart_controller.dart';
+import 'package:ecommerce_getx_php_mysql/buisness_logic/cart_screen/cart_screen_controller.dart';
 import 'package:ecommerce_getx_php_mysql/buisness_logic/connection/test_controller.dart';
 import 'package:ecommerce_getx_php_mysql/buisness_logic/favorite_screen/favorite_screen_controller.dart';
 import 'package:ecommerce_getx_php_mysql/buisness_logic/items/items_controller.dart';
@@ -21,6 +23,7 @@ import 'package:ecommerce_getx_php_mysql/presentation/screens/auth/login.dart';
 import 'package:ecommerce_getx_php_mysql/presentation/screens/auth/signup_folder/signup.dart';
 import 'package:ecommerce_getx_php_mysql/presentation/screens/auth/signup_folder/success_signup.dart';
 import 'package:ecommerce_getx_php_mysql/presentation/screens/auth/signup_folder/verify_otp_signup.dart';
+import 'package:ecommerce_getx_php_mysql/presentation/screens/cart_screen.dart';
 import 'package:ecommerce_getx_php_mysql/presentation/screens/favorite_screen.dart';
 import 'package:ecommerce_getx_php_mysql/presentation/screens/items.dart';
 import 'package:ecommerce_getx_php_mysql/presentation/screens/items_details.dart';
@@ -99,11 +102,22 @@ List<GetPage> routesList = [
   GetPage(
     name: AppRoutes.itemsDetails,
     page: () => ItemDetailsScreen(),
-    bindings: [ItemDetailsBindings()],
+    bindings: [
+      ItemDetailsBindings(),
+      CartBindings(),
+    ],
   ),
   GetPage(
     name: AppRoutes.favorite,
     page: () => const FavoriteScreen(),
     bindings: [FavoriteScreenBindings()],
+  ),
+  GetPage(
+    name: AppRoutes.cart,
+    page: () => CartScreen(),
+    bindings: [
+      CartBindings(),
+      CartScreenBindings(),
+    ],
   )
 ];

@@ -46,12 +46,15 @@ class _MainPageState extends State<MainPage> {
       onPressed: () {
         callback(cartPageIndex);
       },
-      backgroundColor: Sze.mobile ? AppColors.backgroundColor1.withOpacity(0.2) : null,
+      backgroundColor: cartPageIndex == currentIndex ? AppColors.backgroundColor2 : AppColors.backgroundColor1.withOpacity(0.2),
       shape: Sze.mobile ? const CircleBorder() : null,
-      child: Icon(
-        Icons.shopping_cart,
-        color: cartPageIndex == currentIndex ? AppColors.backgroundColor1 : AppColors.onBackgroundColor2.withOpacity(0.7),
-        size: 30.w,
+      child: Container(
+        padding: EdgeInsets.all(5.w),
+        child: Icon(
+          Icons.shopping_cart,
+          color: cartPageIndex == currentIndex ? AppColors.backgroundColor1 : AppColors.onBackgroundColor2.withOpacity(0.7),
+          size: 30.w,
+        ),
       ),
     );
   }

@@ -11,7 +11,7 @@ class AvaliableColorsView extends StatelessWidget {
     return Column(
       children: [
         Container(
-          margin: EdgeInsets.only(top: 15.h),
+          margin: EdgeInsets.only(top: 10.h),
           child: Text('Pick a Color', style: Themes.headlineLarge),
         ),
         SizedBox(
