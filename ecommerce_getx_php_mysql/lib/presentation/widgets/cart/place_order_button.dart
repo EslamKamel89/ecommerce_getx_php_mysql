@@ -21,7 +21,7 @@ Widget placeOrderButton() {
           height: productCount <= 1 ? 180.h : 220.h,
           padding: EdgeInsets.only(top: 30.h, left: 60.w, right: 60.w),
           child: GetBuilder<CartController>(builder: (contrller) {
-            final int price = int.parse(controller.cartTotalPriceModel.totalprice!);
+            final int price = int.parse(controller.cartTotalPriceModel.totalprice ?? '0');
             const int shipingPrice = 200;
             final int totalPrice = price + shipingPrice;
             return Column(

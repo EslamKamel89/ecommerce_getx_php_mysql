@@ -9,11 +9,13 @@ class CustomSearchField extends StatelessWidget {
     this.controller,
     this.searchIconButton,
     this.width,
+    this.onChanged,
   });
   final String? title;
   final TextEditingController? controller;
   final void Function()? searchIconButton;
   final double? width;
+  final void Function(String val)? onChanged;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -21,7 +23,7 @@ class CustomSearchField extends StatelessWidget {
       height: 50.h,
       decoration: BoxDecoration(
         color: AppColors.backgroundColor2,
-        border: Border.all(color: AppColors.onBackgroundColor2),
+        border: Border.all(color: AppColors.onBackgroundColor2, width: 2.w),
         borderRadius: BorderRadius.circular(20.w),
       ),
       alignment: Alignment.center,
@@ -35,6 +37,7 @@ class CustomSearchField extends StatelessWidget {
             width: width ?? 200.w,
             child: TextFormField(
               controller: controller,
+              onChanged: onChanged,
               decoration: InputDecoration(
                 hintText: title ?? 'Search',
                 hintStyle: TextStyle(fontSize: 20.sp),

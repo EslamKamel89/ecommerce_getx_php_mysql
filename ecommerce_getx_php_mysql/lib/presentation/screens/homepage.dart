@@ -2,13 +2,13 @@ import 'package:ecommerce_getx_php_mysql/buisness_logic/homepage/homepage_contro
 // ignore: unused_import
 import 'package:ecommerce_getx_php_mysql/buisness_logic/services/services_controller.dart';
 import 'package:ecommerce_getx_php_mysql/constants/color.dart';
+import 'package:ecommerce_getx_php_mysql/presentation/components/items_search_field.dart';
 import 'package:ecommerce_getx_php_mysql/presentation/themes/themes.dart';
 import 'package:ecommerce_getx_php_mysql/presentation/widgets/mainpage/homepage/categories_row.dart';
 import 'package:ecommerce_getx_php_mysql/presentation/widgets/mainpage/homepage/favorite_button.dart';
 import 'package:ecommerce_getx_php_mysql/presentation/widgets/mainpage/homepage/notification_button.dart';
 import 'package:ecommerce_getx_php_mysql/presentation/widgets/mainpage/homepage/offers_ads.dart';
 import 'package:ecommerce_getx_php_mysql/presentation/widgets/mainpage/homepage/recommended_products.dart';
-import 'package:ecommerce_getx_php_mysql/presentation/widgets/mainpage/homepage/search_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -37,12 +37,12 @@ class Homepage extends StatelessWidget {
         child: ListView(
           children: [
             SizedBox(height: 5.h),
-            Row(
+            const Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                HomepageSearchField(),
-                const NotificationsButton(),
-                const FavoriteButton(),
+                ItemsSearchField(),
+                NotificationsButton(),
+                FavoriteButton(),
               ],
             ),
             const OffersAds(),
@@ -56,5 +56,6 @@ class Homepage extends StatelessWidget {
     );
   }
 
-  Text _homepageTitle(String title) => Text(title, style: Themes.headlineMedium.copyWith(color: AppColors.backgroundColor1));
+  Text _homepageTitle(String title) =>
+      Text(title, style: Themes.headlineMedium.copyWith(color: AppColors.backgroundColor1));
 }

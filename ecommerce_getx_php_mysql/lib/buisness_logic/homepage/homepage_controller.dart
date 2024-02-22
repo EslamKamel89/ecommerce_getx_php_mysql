@@ -6,7 +6,6 @@ import 'package:ecommerce_getx_php_mysql/core/functions/handling_status_request.
 import 'package:ecommerce_getx_php_mysql/data/data_provider/remote/home_data.dart';
 import 'package:ecommerce_getx_php_mysql/data/models/home/categories_model.dart';
 import 'package:ecommerce_getx_php_mysql/data/models/home/items_model.dart';
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 abstract class HomepageControllerAbstract extends GetxController {
@@ -25,8 +24,6 @@ class HomepageController extends HomepageControllerAbstract {
   late CategoriesModel _categoriesModel;
   late ItemModel _itemsModel;
   late List _tempList;
-
-  TextEditingController searchController = TextEditingController();
 
   @override
   Future fetchData() async {

@@ -15,7 +15,7 @@ class AppRoutes {
   static const String itemsDetails = '/ItemsDetails';
   static const String favorite = '/Favorite';
   static const String cart = '/Cart';
-  // static const String resetPassword = '/ResetPassword';
+  static const String searchItems = '/SearchItems';
   // static const String resetPassword = '/ResetPassword';
   // static const String resetPassword = '/ResetPassword';
   // static const String resetPassword = '/ResetPassword';

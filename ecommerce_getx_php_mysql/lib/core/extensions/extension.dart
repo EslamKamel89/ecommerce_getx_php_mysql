@@ -44,10 +44,8 @@ extension PrintTitleToConsole on Object? {
 
 extension PrintTitleAndMessageToConsole on Object? {
   prm(String t) {
-    // t.prt;
     String title = '${_toYellow('[LOG] [B O D Y > > ] ')}${_toYellow(t)} >> ${_toGreen(toString())}';
     print(title);
-    // pr;
     return this;
   }
 }

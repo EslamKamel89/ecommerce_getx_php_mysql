@@ -30,7 +30,8 @@ class AppLinks {
   static const String delelteItemFromCartLink = '$serverName/cart/delete_cart.php';
   static const String viewCartLink = '$serverName/cart/view_cart.php';
   static const String getItemCountInCartLink = '$serverName/cart/get_count_items_cart.php';
-  // static const String Link = '$serverName/';
+  // ------------------------ searchItems ------------------------
+  static const String searchItemsLink = '$serverName/items/search.php';
   // static const String Link = '$serverName/';
   // static const String Link = '$serverName/';
   // static const String Link = '$serverName/';

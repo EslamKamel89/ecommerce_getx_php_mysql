@@ -1,4 +1,5 @@
 import 'package:ecommerce_getx_php_mysql/constants/color.dart';
+import 'package:ecommerce_getx_php_mysql/presentation/components/items_search_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -67,6 +68,21 @@ class CustomAppBar {
       backgroundColor: Colors.white,
       centerTitle: true,
       foregroundColor: Colors.grey,
+    );
+  }
+
+  static AppBar searchAppBar() {
+    return AppBar(
+      title: Container(
+          margin: EdgeInsets.only(
+            bottom: 5.w,
+            top: 5.w,
+          ),
+          child: const ItemsSearchField()),
+      centerTitle: true,
+      backgroundColor: AppColors.backgroundColor1.withOpacity(0.1),
+      foregroundColor: Colors.black,
+      toolbarHeight: 70.h,
     );
   }
 }

@@ -13,6 +13,7 @@ import 'package:ecommerce_getx_php_mysql/buisness_logic/favorite_screen/favorite
 import 'package:ecommerce_getx_php_mysql/buisness_logic/items/items_controller.dart';
 import 'package:ecommerce_getx_php_mysql/buisness_logic/items_details/items_details_controller.dart';
 import 'package:ecommerce_getx_php_mysql/buisness_logic/onboarding/onboarding_controller.dart';
+import 'package:ecommerce_getx_php_mysql/buisness_logic/search/search_controller.dart';
 import 'package:ecommerce_getx_php_mysql/constants/routes_names.dart';
 import 'package:ecommerce_getx_php_mysql/core/middleware/middleware.dart';
 import 'package:ecommerce_getx_php_mysql/presentation/screens/auth/forget_reset_password/forget_password.dart';
@@ -30,6 +31,7 @@ import 'package:ecommerce_getx_php_mysql/presentation/screens/items_details.dart
 import 'package:ecommerce_getx_php_mysql/presentation/screens/language.dart';
 import 'package:ecommerce_getx_php_mysql/presentation/screens/mainpage/mainpage.dart';
 import 'package:ecommerce_getx_php_mysql/presentation/screens/onboarding.dart';
+import 'package:ecommerce_getx_php_mysql/presentation/screens/search.dart';
 import 'package:ecommerce_getx_php_mysql/presentation/screens/test.dart';
 import 'package:get/get.dart';
 
@@ -92,7 +94,7 @@ List<GetPage> routesList = [
   GetPage(
     name: AppRoutes.mainpage,
     page: () => const MainPage(),
-    // bindings: [HomepageBinding()],
+    bindings: [SearchBindings()],
   ),
   GetPage(
     name: AppRoutes.items,
@@ -119,5 +121,9 @@ List<GetPage> routesList = [
       CartBindings(),
       CartScreenBindings(),
     ],
+  ),
+  GetPage(
+    name: AppRoutes.searchItems,
+    page: () => SearchScreen(),
   )
 ];
