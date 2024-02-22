@@ -21,6 +21,7 @@ class ItemModel {
   String? categoriesImage;
   String? categoriesDatetime;
   String? favorite;
+  String? itemsPriceDiscount;
   ItemModel({
     this.itemsId,
     this.itemsName,
@@ -40,6 +41,7 @@ class ItemModel {
     this.categoriesImage,
     this.categoriesDatetime,
     this.favorite,
+    this.itemsPriceDiscount,
   });
 
   factory ItemModel.fromMap(Map<String, dynamic> map) {
@@ -62,6 +64,7 @@ class ItemModel {
     model.categoriesImage = map['categories_image'].toString();
     model.categoriesDatetime = map['categories_datetime'].toString();
     model.favorite = map['favorite_item'].toString();
+    model.itemsPriceDiscount = map['items_price_discount'].toString();
     return model;
   }
 // favorite_item
@@ -86,6 +89,7 @@ class ItemModel {
       'categories_image': categoriesImage,
       'categories_datetime': categoriesDatetime,
       'favorite_item': favorite,
+      'items_price_discount': itemsPriceDiscount,
     };
   }
 
@@ -114,7 +118,8 @@ class ItemModel {
         other.categoriesNameAr == categoriesNameAr &&
         other.categoriesImage == categoriesImage &&
         other.categoriesDatetime == categoriesDatetime &&
-        other.favorite == favorite;
+        other.favorite == favorite &&
+        other.itemsPriceDiscount == itemsPriceDiscount;
   }
 
   @override
@@ -136,11 +141,12 @@ class ItemModel {
         categoriesNameAr.hashCode ^
         categoriesImage.hashCode ^
         categoriesDatetime.hashCode ^
-        favorite.hashCode;
+        favorite.hashCode ^
+        itemsPriceDiscount.hashCode;
   }
 
   @override
   String toString() {
-    return 'ItemsModel(itemsId: $itemsId, itemsName: $itemsName, itemsNameAr: $itemsNameAr, itemsDesc: $itemsDesc, itemsDescAr: $itemsDescAr, itemsImage: $itemsImage, itemsCount: $itemsCount, itemsActive: $itemsActive, itemsPrice: $itemsPrice, itemsDiscount: $itemsDiscount, itemsDatetime: $itemsDatetime, itemsCategoriesId: $itemsCategoriesId, categoriesId: $categoriesId, categoriesName: $categoriesName, categoriesNameAr: $categoriesNameAr, categoriesImage: $categoriesImage, categoriesDatetime: $categoriesDatetime , favorite: $favorite)';
+    return 'ItemsModel(itemsId: $itemsId, itemsName: $itemsName, itemsNameAr: $itemsNameAr, itemsDesc: $itemsDesc, itemsDescAr: $itemsDescAr, itemsImage: $itemsImage, itemsCount: $itemsCount, itemsActive: $itemsActive, itemsPrice: $itemsPrice, itemsDiscount: $itemsDiscount, itemsDatetime: $itemsDatetime, itemsCategoriesId: $itemsCategoriesId, categoriesId: $categoriesId, categoriesName: $categoriesName, categoriesNameAr: $categoriesNameAr, categoriesImage: $categoriesImage, categoriesDatetime: $categoriesDatetime , favorite: $favorite , itemsPriceDiscount: $itemsPriceDiscount)';
   }
 }
